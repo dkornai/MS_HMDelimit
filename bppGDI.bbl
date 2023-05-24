@@ -1,0 +1,267 @@
+\begin{thebibliography}{}
+
+\bibitem[Alexander and Lange(2011)Alexander and Lange]{Alexander2011}
+Alexander, D.~H. and Lange, K. 2011.
+\newblock Enhancements to the {ADMIXTURE} algorithm for individual ancestry
+  estimation.
+\newblock {\em BMC Bioinformat.}, {12}: 246.
+
+\bibitem[Bamberger {\em et~al.}(2022)Bamberger, Xu, and
+  Hausdorf]{Bamberger2022}
+Bamberger, S., Xu, J., and Hausdorf, B. 2022.
+\newblock Evaluating species delimitation methods in radiations: The land snail
+  \textit{Albinaria cretensis} complex on crete.
+\newblock {\em Syst. Biol.}, {71}(2): 439--460.
+
+\bibitem[Barley {\em et~al.}(2018)Barley, Brown, and Thomson]{Barley2018}
+Barley, A.~J., Brown, J.~M., and Thomson, R.~C. 2018.
+\newblock Impact of model violations on the inference of species boundaries
+  under the multispecies coalescent.
+\newblock {\em Syst. Biol.}, {67}(2): 269--284.
+
+\bibitem[Bolotov {\em et~al.}(2017)Bolotov, Aksenova, Bespalaya, Gofarov,
+  Kondakov, Paltser, Stefansson, Travina, and Vinarski]{Bolotov2017}
+Bolotov, I.~N., Aksenova, O.~V., Bespalaya, Y.~V., Gofarov, M.~Y., Kondakov,
+  A.~V., Paltser, I.~S., Stefansson, A., Travina, O.~V., and Vinarski, M.~V.
+  2017.
+\newblock Origin of a divergent {mtDNA} lineage of a freshwater snail species,
+  \textit{Radix balthica}, in {Iceland}: cryptic glacial refugia or a
+  postglacial founder event?
+\newblock {\em Hydrobiologia\/}, {787}(1): 73--98.
+
+\bibitem[Campillo {\em et~al.}(2020)Campillo, Barley, and
+  Thomson]{Campillo2020}
+Campillo, L.~C., Barley, A.~J., and Thomson, R.~C. 2020.
+\newblock Model-based species delimitation: are coalescent species
+  reproductively isolated?
+\newblock {\em Syst. Biol.}, {69}(4): 708--721.
+
+\bibitem[Chambers and Hillis(2020)Chambers and Hillis]{Chambers2020}
+Chambers, E.~A. and Hillis, D.~M. 2020.
+\newblock The multispecies coalescent over-splits species in the case of
+  geographically widespread taxa.
+\newblock {\em Syst. Biol.}, {69}(1): 184--193.
+
+\bibitem[Chen {\em et~al.}(2019)Chen, Qiu, Jiang, Wang, Lin, Li, Bibi, Yang,
+  Wang, Nie, Su, Liu, Li, Fu, Pan, Liu, Yang, Zhang, Yin, Wang, Zhao, Zhang,
+  Wang, Qin, Liu, Wang, Ren, Zhang, Zeng, da~Fonseca, Wei, Li, Wan, Zhao, Zhu,
+  Wang, Duan, Gao, Zhang, Chen, Hvilsom, Epps, Chemnick, Dong, Mirarab,
+  Siegismund, Ryder, Gilbert, Lewin, Zhang, Heller, and Wang]{Chen2019}
+Chen, L., Qiu, Q., Jiang, Y., Wang, K., Lin, Z., Li, Z., Bibi, F., Yang, Y.,
+  Wang, J., Nie, W., Su, W., Liu, G., Li, Q., Fu, W., Pan, X., Liu, C., Yang,
+  J., Zhang, C., Yin, Y., Wang, Y., Zhao, Y., Zhang, C., Wang, Z., Qin, Y.,
+  Liu, W., Wang, B., Ren, Y., Zhang, R., Zeng, Y., da~Fonseca, R.~R., Wei, B.,
+  Li, R., Wan, W., Zhao, R., Zhu, W., Wang, Y., Duan, S., Gao, Y., Zhang,
+  Y.~E., Chen, C., Hvilsom, C., Epps, C.~W., Chemnick, L.~G., Dong, Y.,
+  Mirarab, S., Siegismund, H.~R., Ryder, O.~A., Gilbert, M. T.~P., Lewin,
+  H.~A., Zhang, G., Heller, R., and Wang, W. 2019.
+\newblock Large-scale ruminant genome sequencing provides insights into their
+  evolution and distinct traits.
+\newblock {\em Science\/}, {364}(6446): eaav6202.
+
+\bibitem[Duda(2021)Duda]{Duda2021}
+Duda, T.~F., J. 2021.
+\newblock Patterns of variation of mutation rates of mitochondrial and nuclear
+  genes of gastropods.
+\newblock {\em BMC Ecol. Evol.}, {21}(1): 13.
+
+\bibitem[Fennessy {\em et~al.}(2016)Fennessy, Bidon, Reuss, Kumar, Elkan,
+  Nilsson, Vamberger, Fritz, and Janke]{Fennessy2016}
+Fennessy, J., Bidon, T., Reuss, F., Kumar, V., Elkan, P., Nilsson, M.~A.,
+  Vamberger, M., Fritz, U., and Janke, A. 2016.
+\newblock Multi-locus analyses reveal four giraffe species instead of one.
+\newblock {\em Curr. Biol.}, {26}(18): 2543--2549.
+
+\bibitem[Fiser {\em et~al.}(2018)Fiser, Robinson, and Malard]{Fiser2018}
+Fiser, C., Robinson, C.~T., and Malard, F. 2018.
+\newblock Cryptic species as a window into the paradigm shift of the species
+  concept.
+\newblock {\em Mol. Ecol.}, {27}(3): 613--635.
+
+\bibitem[Flouri {\em et~al.}(2018)Flouri, Jiao, Rannala, and Yang]{Flouri2018}
+Flouri, T., Jiao, X., Rannala, B., and Yang, Z. 2018.
+\newblock Species tree inference with {BPP} using genomic sequences and the
+  multispecies coalescent.
+\newblock {\em Mol. Biol. Evol.}, {35}(10): 2585--2593.
+
+\bibitem[He {\em et~al.}(2019)He, Li, Yang, Wang, Zhong, Duke, Wu, and
+  Shi]{He2019}
+He, Z., Li, X., Yang, M., Wang, X., Zhong, C., Duke, N.~C., Wu, C.~I., and Shi,
+  S. 2019.
+\newblock Speciation with gene flow via cycles of isolation and migration:
+  insights from multiple mangrove taxa.
+\newblock {\em Natl. Sci. Rev.}, {6}(2): 275--288.
+
+\bibitem[Hebert {\em et~al.}(2004)Hebert, Stoeckle, Zemlak, and
+  Francis]{Hebert2004}
+Hebert, P.~D., Stoeckle, M.~Y., Zemlak, T.~S., and Francis, C.~M. 2004.
+\newblock Identification of birds through {DNA} barcodes.
+\newblock {\em PLoS Biol.}, {2}: 1657--1663.
+
+\bibitem[Hirase {\em et~al.}(2021)Hirase, Yamasaki, Sekino, Nishisako, Ikeda,
+  Hara, Merila, and Kikuchi]{Hirase2021}
+Hirase, S., Yamasaki, Y.~Y., Sekino, M., Nishisako, M., Ikeda, M., Hara, M.,
+  Merila, J., and Kikuchi, K. 2021.
+\newblock Genomic evidence for speciation with gene flow in broadcast spawning
+  marine invertebrates.
+\newblock {\em Mol. Biol. Evol.}, {38}(11): 4683--4699.
+
+\bibitem[Jackson {\em et~al.}(2017)Jackson, Carstens, Morales, and
+  O'Meara]{Jackson2017}
+Jackson, N.~D., Carstens, B.~C., Morales, A.~E., and O'Meara, B.~C. 2017.
+\newblock Species delimitation with gene flow.
+\newblock {\em Syst. Biol.}, {66}(5): 799--812.
+
+\bibitem[Jiao and Yang(2021)Jiao and Yang]{Jiao2021}
+Jiao, X. and Yang, Z. 2021.
+\newblock Defining species when there is gene flow.
+\newblock {\em Syst. Biol.}, {70}(1): 108--119.
+
+\bibitem[Jiao {\em et~al.}(2021)Jiao, Flouri, and Yang]{Jiao2021MSC}
+Jiao, X., Flouri, T., and Yang, Z. 2021.
+\newblock Multispecies coalescent and its applications to infer species
+  phylogenies and cross-species gene flow.
+\newblock {\em Nat. Sci. Rev.}, {8}(12): DOI: 10.1093/nsr/nwab127.
+
+\bibitem[Kim {\em et~al.}(2022)Kim, Bauer, and Near]{Kim2022}
+Kim, D., Bauer, B.~H., and Near, T.~J. 2022.
+\newblock Introgression and species delimitation in the longear sunfish
+  \textit{Lepomis megalotis} ({Teleostei: Percomorpha: Centrarchidae}).
+\newblock {\em Syst. Biol.}, {71}(2): 273--285.
+
+\bibitem[Leach\'e {\em et~al.}(2019)Leach\'e, Zhu, Rannala, and
+  Yang]{Leache2019}
+Leach\'e, A.~D., Zhu, T., Rannala, B., and Yang, Z. 2019.
+\newblock The spectre of too many species.
+\newblock {\em Syst. Biol.}, {68}(1): 168--181.
+
+\bibitem[Luo {\em et~al.}(2018)Luo, Ling, Ho, and Zhu]{Luo2018}
+Luo, A., Ling, C., Ho, S. Y.~W., and Zhu, C.~D. 2018.
+\newblock Comparison of methods for molecular species delimitation across a
+  range of speciation scenarios.
+\newblock {\em Syst. Biol.}, {67}(5): 830--846.
+
+\bibitem[MacGuigan {\em et~al.}(2021)MacGuigan, Hoagstrom, Domisch, Hulsey, and
+  Near]{MacGuigan2021}
+MacGuigan, D.~J., Hoagstrom, C.~W., Domisch, S., Hulsey, C.~D., and Near, T.~J.
+  2021.
+\newblock Integrative ichthyological species delimitation in the {Greenthroat}
+  {Darter} complex (\textit{Percidae}: \textit{Etheostomatinae}).
+\newblock {\em Zoologica Scripta\/}, {50}(6): 707--733.
+
+\bibitem[Martin {\em et~al.}(2013)Martin, Dasmahapatra, Nadeau, Salazar,
+  Walters, Simpson, Blaxter, Manica, Mallet, and Jiggins]{Martin2013}
+Martin, S.~H., Dasmahapatra, K.~K., Nadeau, N.~J., Salazar, C., Walters, J.~R.,
+  Simpson, F., Blaxter, M., Manica, A., Mallet, J., and Jiggins, C.~D. 2013.
+\newblock Genome-wide evidence for speciation with gene flow in
+  \textit{Heliconius} butterflies.
+\newblock {\em Genome Res.}, {23}(11): 1817--1828.
+
+\bibitem[Petit and Excoffier(2009)Petit and Excoffier]{Petit2009}
+Petit, R. and Excoffier, L. 2009.
+\newblock Gene flow and species delimitation.
+\newblock {\em Trends Ecol. Evol.}, {24}: 386--393.
+
+\bibitem[Petzold and Hassanin(2020)Petzold and Hassanin]{Petzold2020}
+Petzold, A. and Hassanin, A. 2020.
+\newblock A comparative approach for species delimitation based on multiple
+  methods of multi-locus {DNA} sequence analysis: A case study of the genus
+  \textit{Giraffa} ({Mammalia, Cetartiodactyla}).
+\newblock {\em PLoS One\/}, {15}(2): e0217956.
+
+\bibitem[Pinho and Hey(2010)Pinho and Hey]{Pinho2010}
+Pinho, C. and Hey, J. 2010.
+\newblock Divergence with gene flow: models and data.
+\newblock {\em Ann. Rev. Ecol. Evol. Syst.}, {41}: 215--230.
+
+\bibitem[Ramirez-Reyes {\em et~al.}(2020)Ramirez-Reyes, Blair, Flores-Villela,
+  Pinero, Lathrop, and Murphy]{Ramirez-Reyes2020}
+Ramirez-Reyes, T., Blair, C., Flores-Villela, O., Pinero, D., Lathrop, A., and
+  Murphy, R. 2020.
+\newblock Phylogenomics and molecular species delimitation reveals great
+  cryptic diversity of leaf-toed geckos ({Phyllodactylidae}:
+  \textit{Phyllodactylus}), ancient origins, and diversification in {Mexico}.
+\newblock {\em Mol. Phylogenet. Evol.}, {150}.
+
+\bibitem[Rannala and Yang(2003)Rannala and Yang]{Rannala2003}
+Rannala, B. and Yang, Z. 2003.
+\newblock {B}ayes estimation of species divergence times and ancestral
+  population sizes using {DNA} sequences from multiple loci.
+\newblock {\em Genetics\/}, {164}(4): 1645--1656.
+
+\bibitem[Rannala and Yang(2017)Rannala and Yang]{Rannala2017}
+Rannala, B. and Yang, Z. 2017.
+\newblock Efficient {B}ayesian species tree inference under the multispecies
+  coalescent.
+\newblock {\em Syst. Biol.}, {66}: 823--842.
+
+\bibitem[Rannala and Yang(2020)Rannala and Yang]{Rannala2020}
+Rannala, B. and Yang, Z. 2020.
+\newblock Species delimitation.
+\newblock In N.~Galtier, F.~Delsuc, and C.~Scornavacca, editors, {\em
+  Phylogenetics in the Genomic Era\/}, book section 5.5, pages 5.5.1--18. No
+  Commercial Publisher.
+
+\bibitem[Ruane {\em et~al.}(2014)Ruane, Bryson, Pyron, and Burbrink]{Ruane2014}
+Ruane, S., Bryson, R.~W., Pyron, R.~A., and Burbrink, F.~T. 2014.
+\newblock Coalescent species delimitation in milksnakes (genus lampropeltis)
+  and impacts on phylogenetic comparative analyses.
+\newblock {\em Syst. Biol.}, {63}(2): 231--250.
+
+\bibitem[Schilthuizen(2018)Schilthuizen]{Schilthuizen2018}
+Schilthuizen, M. 2018.
+\newblock {\em Biogeography and Biodiversity of the Aegean\/}.
+\newblock Broken Hill Publishers, Nicosia, Cyprus.
+
+\bibitem[Stankowski and Ravinet(2021)Stankowski and Ravinet]{Stankowski2021}
+Stankowski, S. and Ravinet, M. 2021.
+\newblock Defining the speciation continuum.
+\newblock {\em Evolution\/}, {75}(6): 1256--1273.
+
+\bibitem[Sukumaran and Knowles(2017)Sukumaran and Knowles]{Sukumaran2017}
+Sukumaran, J. and Knowles, L. 2017.
+\newblock Multispecies coalescent delimits structure, not species.
+\newblock {\em Proc. Natl. Acad. Sci. USA.}, {114}: 1607--1612.
+
+\bibitem[Wells {\em et~al.}(2022)Wells, Carruthers, Munoz-Rodriguez,
+  Sumadijaya, Wood, and Scotland]{Wells2022}
+Wells, T., Carruthers, T., Munoz-Rodriguez, P., Sumadijaya, A., Wood, J. R.~I.,
+  and Scotland, R.~W. 2022.
+\newblock Species as a heuristic: reconciling theory and practice.
+\newblock {\em Syst. Biol.}, {71}(5): 1233--1243.
+
+\bibitem[Wu {\em et~al.}(2018)Wu, Ng, Yang, Li, and Ge]{Wu2018}
+Wu, W., Ng, W.~L., Yang, J.~X., Li, W.~M., and Ge, X.~J. 2018.
+\newblock High cryptic species diversity is revealed by genome-wide
+  polymorphisms in a wild relative of banana, \textit{Musa itinerans}, and
+  implications for its conservation in subtropical {China}.
+\newblock {\em BMC Plant Biol.}, {18}(1): 194.
+
+\bibitem[Yang(2014)Yang]{Yang2014}
+Yang, Z. 2014.
+\newblock {\em Molecular Evolution: A Statistical Approach\/}.
+\newblock Oxford University Press, Oxford, England.
+
+\bibitem[Yang(2015)Yang]{Yang2015}
+Yang, Z. 2015.
+\newblock The {BPP} program for species tree estimation and species
+  delimitation.
+\newblock {\em Curr. Zool.}, {61}: 854--865.
+
+\bibitem[Yang and Rannala(2010)Yang and Rannala]{Yang2010}
+Yang, Z. and Rannala, B. 2010.
+\newblock Bayesian species delimitation using multilocus sequence data.
+\newblock {\em Proc. Natl. Acad. Sci. USA\/}, {107}: 9264--9269.
+
+\bibitem[Yang and Rannala(2017)Yang and Rannala]{Yang2017}
+Yang, Z. and Rannala, B. 2017.
+\newblock Bayesian species identification under the multispecies coalescent
+  provides significant improvements to {DNA} barcoding analyses.
+\newblock {\em Mol. Ecol.}, {26}: 3028--3036.
+
+\bibitem[Zhang {\em et~al.}(2011)Zhang, Zhang, Zhu, and Yang]{Zhang2011}
+Zhang, C., Zhang, D.-X., Zhu, T., and Yang, Z. 2011.
+\newblock Evaluation of a {B}ayesian coalescent method of species delimitation.
+\newblock {\em Syst. Biol.}, {60}: 747--761.
+
+\end{thebibliography}
