@@ -506,95 +506,40 @@ The control files and data files are all provided in the supplementary materials
 } \label{fig:giraffe}
 \end{figure}
 
-\textbf{Data.}  Nine giraffe subspecies have been recoginised: \textit{camelopardalis},
+\textbf{Data.}  Species delimitation in the genetically isolated, but
+phenotypically convergent Giraffes has generated
+sizeable controversy (Fišer et al., 2018). Based
+on morphological characters and molecular data,
+various hypotheses have classified the nine giraffe
+subspecies ( \textit{camelopardalis},
 \textit{angolensis}, \textit{antiquorum}, \textit{giraffa}, \textit{peralta},
 \textit{reticulata}, \textit{rothschildi}, \textit{thornicrofti} and
-\textit{tippelskirchi}.  \red{Genetically isolated populations exhibit phenotypic
-    convergence, which complicates the recognition of distinct species \citep{Fiser2018}.} 
-Based on morphological and molecular data, several hypotheses of delimitation have been
-presented, ranging from one species to as many as six.
+\textit{tippelskirchi}. ) into anywhere from one to six species.
 
 \citet{Petzold2020} compiled a multilocus dataset of 21 introns (average sequence length
 808 bp), sampled from 66 individuals from the nine subspecies.  They found that
 population genetic approaches, such as the program \textsc{structure} and the
 phylogenetic approaches implemented in MrBayes, PhyML, and SuperTRI all supported three
 species. However, the MSC based methods in *BEAST, STACEY, and \textsc{bpp} strongly
-supported five species, which was the maximum that was tested. \red{[How are structure
-   and stacey used to delimit species?  Phylogenetic programs MrBayes, PhyML, and SuperTRI
-   are not for delimiting species?  Why are the \textsc{bpp} results different in the two
-   analyses?]} \\ %
-\red{[Here, the original authors tested if bpp supports 2, 3, 4, or 5 species. They
-   found that 5 were supported.  I retested the dataset (which contained 9 populations)
-   without specifying the possible number of species (in A11 mode) and found that BPP
-   supported 6 species. The original authors never tested a 6 species hypothesis.]}
+supported five species, which was the maximum that was tested. 
 
-We analyzed the data using our pipeline. We augmented the data with further (?) sequences
-from the outgroup species, \textit{Okapia johnstoni}.  \red{[The use of outgroup is
-    unnecessary and complicates comparison with previous results.  Shall we remove the
-    outgroup and use the same data as \citet{Petzold2020}.]}  We used the guide tree for the
-nine subspecies of \citet{Petzold2020}.  The mutation rate was set at $\mu = 2.12 \times
-10^{-8}$ per site per generation \citep{Chen2019}.  \textsc{bpp} supported six species.
 
-Hierarchical merge and split analyses were conducted with the default \textit{gdi}
-thresholds of 0.2 and 0.7, \red{and default generation thresholds of 1000 and 10000 for
-   each method respectively.} The split algorithm suggested three species while the merge
-algorithm suggested six (fig.~\ref{fig:giraffe}).  Both grouped the Eastern populations
-\textit{thornicrofti} and \textit{tippelskirchi} into one species, and the Southern
-populations \textit{angolensis} and \textit{giraffa} into another species.  The split
-algorithm lumped the remaining five subspecies into a single Northern species, while the
-merge algorithm recognized four species.   Mitochondrial introgression has been detected
-between the \textit{rotschildi} and \textit{reticulata} subspecies \citep{Fennessy2016}.
-
-\textbf{2023.3.29-giraffe.}  Based on the observations of mitochondrial haplotypes and
+Based on the observations of mitochondrial haplotypes and
 hybridized individuals \citep{Fennessy2016, Petzold2020}, bidirectional migration was
 specified between the \textit{tippelskirchi} and \textit{reticulata}, as well as the
 \textit{reticulata} and \textit{rothschildi} subspecies.  The migration rate was assigned
-the prior \red{G$(1,100)$} with mean 0.01 migrant individuals per generation.  Merge and
+the prior ($\Gamma (1,100)$) with mean 0.01 migrant individuals per generation.  Merge and
 split analyses were conducted with the animal specific $gdi$ thresholds of 0.3 and 0.7, as
-recommended by \citet{Jackson2017}.  Both algorithms suggested three species, separating
-the northern, eastern, and southern populations into distinct species.  The result is
-consistent with \citet{Petzold2020}.
+recommended by \citet{Jackson2017}.
+
+The split algorithm suggested three species while the merge
+algorithm suggested five (fig.~\ref{fig:giraffe}).  Both grouped the Eastern populations
+\textit{thornicrofti} and \textit{tippelskirchi} into one species, and the Southern
+populations \textit{angolensis} and \textit{giraffa} into another species. The split
+algorithm lumped the remaining five subspecies into a single Northern species, while the
+merge algorithm recognized four species. 
 
 
-\subsection{Species delimitation of \textit{Albinaria} snails in Crete}
-
-\begin{figure}[h]
-  \centering %
-  \includegraphics[scale=0.05]{figs/fig-snail}
-  \includegraphics[scale=0.50]{figs/fig-snail-crete}
-  \includegraphics[scale=0.06]{figs/fig-snail-results}
-  
-  \caption{Analyses of the \textit{Albinaria} snail data suggested (\textbf{a}) 29
-   species by the split algorithm and (\textbf{b}) 44 species by the merge algorithm. 
-   Inset \textit{Albinaria} snail image from \cite[][fig.~3A]{Schilthuizen2018}. %
-} \label{fig:snail}
-\end{figure}
-
-\textbf{Data.}  The genus \textit{Albinaria} is one of the largest radiations of land
-snails, with up to 140 species found in their native habitats of Greece and south-western
-Turkey (Schilthuizen 2018).  Delimiting species in such ongoing radiations is challenging
-due to the small differences between the incipient species and possible gene flow between
-lineages.  \citet{Bamberger2022} applied three molecular delimitation methods to data of
-393 nuclear loci (with an average length of 209bp), sampled from 93 individuals across the
-48 populations in the \textit{Albinaria cretensis} complex from Western Crete.  \red{While
-    traditional morphological delimitation \ref{} supported 3-9 species, Gaussian clustering
-    \ref{?} supported 6 species, \textsc{admixture} \citep{Alexander2011} supported 11-17
-    species}, while \textsc{bpp} supported 45-48 species.
-
-We used the phylogenetic tree for the 48 populations produced by \citet{Bamberger2022} as
-the guide tree.  \red{[delete?  As no nuclear mutation rate was available for snails, we
-    estimated it by taking a known mtDNA $\mu$ derived in the snail \textit{Radix balthica}
-    ($\mu = 7.95 \times 10^{-7}$) \citep{Bolotov2017}, and multiplying it by the mitochondrial
-    to nuclear gene mutation rate ratio (0.24) recently estimated for gastropods
-    \citep{Duda2021}, which yielded $\mu = 1.92 \times 10^{-7}$.] }
-
-We used the merge and split algorithms, with the default \textit{gdi} thresholds of 0.2
-and 0.7, and default generation thresholds of 1000 and 10000. [??]
-
-\textbf{Output and interpretation.}  The progressive split and merge algorithms suggested
-29 and 44 species, respectively (fig.~\ref{fig:snail}).  \red{[delete?] The large range
-    may be due to the fact that some speciation processes are ongoing, so that the species
-    status may be ambiguous \citep{Stankowski2021}.}
 
 
 \subsection{Species delimitation in milksnakes (\textit{Lampropeltis triangulum})}
@@ -619,12 +564,24 @@ known: \textit{abnorma}, \textit{polyzona}, \textit{micropholis}, \textit{triang
 \textit{gentilis}, \textit{annulata}, \textit{elapsoides} (fig.~\ref{fig:milksnake}a).  
 \citet{Ruane2014} analyzed 11 nuclear loci (average length 537 bp) for 164 individuals
 from the seven subspecies using \textsc{bpp} and found evidence for seven independent
-species. \citet{Chambers2020} criticised these results, suggesting that several of the
+species. 
+
+\citet{Chambers2020} criticised these results, suggesting that several of the
 hypothesized species of milksnakes appear to represent arbitrary slices of continuous
 geographic clines.  Based on a combination of phylogeographic and genetic evidence, they
 suggested two alternative hypotheses: a one-species hypothesis merging all subspecies into
 a single species, or a three-species hypothesis separating the \textit{polyzona},
-\textit{triangulum}, and \textit{elapsoides} lineages as species.
+\textit{triangulum}, and \textit{elapsoides} lineages as species. 
+
+Chambers and Hillis (2020) also demonstrated that
+five different arbitrary east-west splits of the the
+\textit{gentilis} and \textit{ triangulum} populations are all supported
+by BPP as being two separate species (Fig. 7). This
+result is highly concerning, as these five alternative
+species delimitations are not mutually compatible.
+These results also echo the simulations of \cite{Barley2018}, who demonstrated that BPP will delimit
+geographically separated clusters of individuals from
+a single species as distinct species entities.
 
 We analyzed the data using our pipeline, using the guide tree of ???, with no migration
 rates assumed (fig.~\ref{fig:milksnake}).  Merge and split algorithms were run using $gdi$
@@ -636,15 +593,13 @@ of the species (\textit{elapsoides} and \textit{triangulum}) were identical, but
 HMDelimit identified additional diversity in the \textit{polyzona} branch, marking each
 population as a distinct species.  The split analysis only supported a single species.
 
-\red{[I'll probably delete this later.  I seem to remember there were many problems with
-    the Chambers\&Hillis paper, but i need to read it to refresh my memory.]} We conducted a
-second analysis using only the 38 individuals from the \textit{gentilis},
+We conducted a second analysis using only the 38 individuals from the \textit{gentilis},
 \textit{triangulum}, and \textit{alterna} populations (which acted as an outgroup in all
 analyses).  The assignment of individuals to the \textit{gentilis} and \textit{triangulum}
-populations was \red{varied?} in each analysis (fig.~\ref{fig:milksnake}).  Merge and
-split analyses were ran using the settings as above.  For all five of the East-West
-geographic splits tested, our merge and split analyses converged on an identical result,
-merging the \textit{gentilis} and \textit{triangulum} populations into a single species.
+populations was varied in each analysis, according to the five arbitrary East-West splits of \cite{Chambers2020} (fig.~\ref{fig:milksnake}). Merge and split analyses were ran using the settings as above.  
+
+For all five of the East-West geographic splits tested, our merge and split analyses converged on an identical result,
+merging the \textit{gentilis} and \textit{triangulum} populations into a single species, congruent with the suggestions of \cite{Chambers2020}.
 
 
 
@@ -665,26 +620,22 @@ The longear sunfish (\textit{Lepomis megalotis}) is a freshwater fish in the sun
 family, Centrarchidae, of order Perciformes.  It is native to eastern North America from
 the Great Lakes down to northeastern Mexico.  Due to widespread geographic distributions
 and frequent hybridizations, species delimitation in the longear sunfish poses
-considerable challenges. \citet{Kim2022} analyzed a dataset of 163 ddRAD loci (average
+considerable challenges. 
+
+\citet{Kim2022} analyzed a dataset of 163 ddRAD loci (average
 sequence length 89 bp) sampled from 50 individuals from the six subspecies:
 \textit{aquilensis}, \textit{solis}, \textit{ouachita}, \textit{megalotis},
 \textit{ozark}, \textit{pelastes}.  After determining a species tree using
 \textsc{IQ-tree}, they used \textsc{bpp} A00 without migration to calculate $\tau$ and
 $\theta$ parameters for each of the subspecies, and used these values to calculate
-\textit{gdi} scores, and delimit species in the group.
-
-They found that none of the populations have \textit{gdi} values supporting distinct
-species status.  \citet{Kim2022} also utilized \textsc{Fastsimcoal2} to identify patterns
+\textit{gdi} scores, and delimit species in the group. They found that none of the populations have \textit{gdi} values supporting distinct species status. \citet{Kim2022} also utilized \textsc{Fastsimcoal2} to identify patterns
 of gene flow, and find evidence for multiple instances of significant historical or
-ongoing genetic exchange.  However, their delimitation analysis assumed no gene flow.
+ongoing genetic exchange.  This may be problematic, as their genetic delimitation procedure
+did not account for the patterns of gene flow observed.
 
 We reanalyzed the data, taking into account migration between the subspecies.  Based on
 presence of hybridized individuals, migration from the \textit{megalotis} population to
-the \textit{pelastes}, \textit{solis}, and \textit{ozark} populations was specified. Merge
-and split analyses were conducted with $gdi$ thresholds of 0.3 and 0.7.  The MCMC
-parameters \textit{burnin} and \textit{nsample} were set at 200000 and 500000
-respectively.  The migration rate prior was G$(1,100)?$  with the prior mean 0.01 migrant
-individuals per generation (fig.~\ref{fig:longear-fish}). \red{[Move details to SI.]}
+the \textit{pelastes}, \textit{solis}, and \textit{ozark} populations was specified.
 
 Both merge and split analyses supported a single species.  This is congruent with the $gdi$
 based delimitation of \citet{Kim2022}, who found that all populations have $gdi$ values
