@@ -284,7 +284,7 @@ sequences ($a_1, a_2, b$ ) are sampled.  The $gdi$ is simply the proportion of l
 which the gene tree is $G_{1a}$, that is, $G_1$ with $t_1 < \tau_{AB}$
 (fig.~\ref{fig:gdi-trees}).
 
-\newpage
+
 
 \section{The hierarchical merge and split algorithms}
 
@@ -316,7 +316,8 @@ If there are $K$ populations on the guide tree, the merge algorithm arrives at a
 number of species while the split algorithm arrives at a low number, with $1 \le K_l \le
 K_u \le K $.
 
-
+\clearpage
+\newpage
 
 \section{Example with simulated data ($ABCDX$)}
 
@@ -343,18 +344,27 @@ is no gene flow to or from $X$.  The data consisted of $L=100$
 simulated loci, with two sequences sampled per species per locus, and 500 sites in the
 sequence.  We use the dataset to illustrate our pipeline. 
 
-The control file and the
-program output for the \textsc{bpp} analyses are shown in figure \ref{fig:ABCDX-out}.
+The complete master control file for the program can be found in \ref{fig:ABCDX_mcf}. 
+During the analysis, the pipeline provides written feedback to the user about the current state of the
+delimitation and the decisions made during each iteration (\ref{fig:ABCDX_text_out}).
+This is accompanied by visualisations of the species delimitation and the decision process (Fig. \ref{fig:ABCDX_out}).
+
+During the first iteration of the iterative refinement, the pipeline proposes to merge the
+two current leaf node pairs (A-B, C-D).As the gdi values for the population pairs were below the 0.2 threshold, the A-B and C-D population pairs are
+merged. During the second iteration, the pipeline proposes to merge the AB-CD population pair. 
+During the third iteration, the pipeline proposes that the ABCD-X population pair could be
+merged. However, after calculating the gdi values, the proposal is rejected and the final delimitation is reached. 
+The final species delimitation (ABCD, X), is the known correct solution.
 
 \begin{figure}[h]
 	\begin{center}
-		\includegraphics[scale=0.3]{figs/Pipedemo/sim_fig_v1}
+		\includegraphics[scale=0.35]{figs/Pipedemo/sim_fig_v1}
 	\end{center}
-	\caption{\textbf{Left}: The model of populations and species under which the data was simulated. \textbf{Right}: Incorrect delimitation produced by BPP. (source: \cite{Leache2019} Figure 5)}
-	\label{fig:ABCDX-out}
+	\caption{Visual feedback produced by the pipeline during the three iterations. Visualisations of the currently accepted species delimitation are in the left column. Visualisation of the changes to the phylogenetic tree are in the left column}
+	\label{fig:ABCDX_out}
 \end{figure}
 
-
+\clearpage
 \newpage
 \section{Empirical examples}
 
@@ -751,7 +761,7 @@ All modifications rejected. Final delimitation reached.
     
     \caption{Screen output from running the pipeline to analyze the simulated dataset of
         figure \ref{fig:ABCDX}. %
-    } \label{fig:ABCDX-output}
+    } \label{fig:ABCDX_text_out}
 \end{figure}
 
 \clearpage
