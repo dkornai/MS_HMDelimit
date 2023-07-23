@@ -76,13 +76,6 @@ species delimitation
 
 \maketitle
 
-\red{\textbf{Notes}
-    \begin{itemize}
-        \item collect estimates of $\tau$ and $\theta$ into tables.
-        \item Move all descriptions of MCMC setting etc. into SI.  Provide data files in SI.
-    \end{itemize}
-}
-
 
 \section{Introduction}
 
@@ -291,21 +284,18 @@ sequences ($a_1, a_2, b$ ) are sampled.  The $gdi$ is simply the proportion of l
 which the gene tree is $G_{1a}$, that is, $G_1$ with $t_1 < \tau_{AB}$
 (fig.~\ref{fig:gdi-trees}).
 
+\newpage
 
-\section{Hierarchical merge and split (HMS?) algorithms}
+\section{The hierarchical merge and split algorithms}
 
 \begin{figure}
    \centering %
-   \includegraphics[scale=0.25]{figs/fig-gdi-algorithms} %
+   \includegraphics[scale=0.25]{figs/Methods/HM_algo} %
    
    \caption{(\textbf{a}) Hierarchical merge and (\textbf{b}) hierarchical split
    algorithms applied to the same guide tree for four populations. \\%
-   \red{[Prepare a version of the figure without gene flow using the same guide tree
-      for merge and plit. \\ %
-      Edit this version (with migration) to have the same guide tree for merge and
-      split.  I suppose with migration it's not obvious how merge should work, but we
-      can discuss options in relation to the issue of non-monophyletic species.]} %
-} \label{fig:gdi-algorithms}
+	} 
+	\label{fig:gdi-algorithms}
 \end{figure}
 
 We implement both the hierarchical merge and hierarchical split algorithms in a python
@@ -327,9 +317,10 @@ number of species while the split algorithm arrives at a low number, with $1 \le
 K_u \le K $.
 
 
+
 \section{Example with simulated data ($ABCDX$)}
 
-\begin{figure}[t]
+\begin{figure}[h]
    \centering
    \includegraphics[scale=0.7]{figs/fig-ABCDX}
    
@@ -344,169 +335,44 @@ K_u \le K $.
 \end{figure}
 
 \citet{Leache2019} simulated sequence data under the MSC-with-migration model for five
-populations of figure \ref{fig:ABCDX}.  Populations $A, B, C, D$ represent a single
+populations (fig.~\ref{fig:ABCDX}).  Populations $A, B, C, D$ represent a single
 large paraphyletic species distributed across a wide geographic range.  Migration
 between any two neighbouring populations occurs at the rate of $M = Nm = 2$ migrants per
 generation. $X$ represents a new species that split off from population $A$, and there
-is no gene flow to or from $X$ (fig.~\ref{fig:ABCDX}).  The data consisted of $L=100$
+is no gene flow to or from $X$.  The data consisted of $L=100$
 simulated loci, with two sequences sampled per species per locus, and 500 sites in the
-sequence.  We use the dataset to illustrate our pipeline.  The control file and the
-program output for the \textsc{bpp} analyses are shown in figures .
+sequence.  We use the dataset to illustrate our pipeline. 
 
+The control file and the
+program output for the \textsc{bpp} analyses are shown in figure \ref{fig:ABCDX-out}.
 
-\section{Tutorial with simulated data ($ABC$)}
-
-\red{[delete this ABC simulation example and replace with the ABCDX example]} \\
-   \textbf{Simulation scenario.}  Sequence data was simulated using a model tree for three
-   populations, $((A,B),C)$, with parameter $\tau_{ABC} = 0.02, \tau_{AB} = 0.001$,
-   $\theta_A = \theta_B = \theta_C = 0.02$, with migration rates $M_{AB} = M_{BA} = 2$
-   (fig.~\ref{fig:ABC}).  $A$ and $B$ represent two geographic populations of a single
-   species, which diverged recently and have been exchanging migrants. Five diploid
-   individuals were sampled from each population per locus.
-
-When \textsc{bpp} A11 mode is used to delimit species in this dataset, it incorrectly
-recovers three species with posterior probability $>0.999$
-(fig.~\ref{fig:ABC}c).
-
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.75]{figs/fig-ABC}
-
-    \caption{\red{[Delete this. We are using the ABCDX example.]} Simulated model with
-   three populations and two species used for the tutorial. \textbf{a)} Simulated
-   speciation scenario. \textbf{b)} Correct species delimitation. \textbf{c)} Incorrect
-   species delimitation inferred by \textsc{bpp} A11. %
-   Output produced by the pipeline recording the iterations, using the model of figure
-   \ref{fig:ABC-demo}.  %
-} \label{fig:ABC-demo}
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.3]{figs/Pipedemo/sim_fig_v1}
+	\end{center}
+	\caption{\textbf{Left}: The model of populations and species under which the data was simulated. \textbf{Right}: Incorrect delimitation produced by BPP. (source: \cite{Leache2019} Figure 5)}
+	\label{fig:ABCDX-out}
 \end{figure}
 
 
-The analyses is specified using a control file, as follows.
-
-\begin{small}
-\begin{verbatim}
-output_directory = Results
-Imapfile = Sim_imap.txt
-seqfile  = Sim_MSA.txt
-
-guide_tree = ((A,B),C);
-migration  = {A -> B, B -> A}
-migprior   = 1 10
-
-mode = merge
-gdi_threshold = <0.2
-
-burnin  = 200000
-nsample = 500000
-\end{verbatim}
-\end{small}
-
-The variable \texttt{output\_directory} specifies the folder where the results of the
-analysis will be written. \texttt{seqfile} points to phylip formatted multiple sequence
-alignment. \texttt{Imapfile} specifies the text file which describes the mapping of
-individuals to populations in the starting delimitation. \texttt{guide\_tree} is a Newick
-representation of the guide tree topology.  \texttt{migration} is used to specify the source
-and destination of migration events.  \texttt{migprior} defines the gamma prior on migration
-rate.  In this case, the value of \texttt{1 10} specifies a prior mean $M = 0.1$.
-\texttt{mode} specifies that the direction of iterative refinement. \texttt{gdi\_threshold}
-specifies the gdi value below which two populations are merged into a candidate species.
-\texttt{burnin} specifies number of discarded iterations in the burn-in period of the MCMC
-analysis. \texttt{nsample} specifies the number of samples used in the estimation of $\tau,
-\theta$ and $M$ parameters. A detailed overview of all possible control file parameters is
-provided in the documentation for the program.
-
-
-The program can be launched from a terminal, as follows
-
-\begin{small}
-\begin{verbatim}
-python HMDelimit.py --mcfile tutorial_sim_merge.txt
-\end{verbatim}
-\end{small}
-
-During the analysis, the pipeline provides written feedback to the user about the current
-state of the delimitation and the decisions and modifications made during each iteration:
-
-\begin{small}
-\begin{verbatim}
-Analysis started
-Starting state of merge mode
-Accepted species (3) in starting delimitation:
-((A,B),C);
-
-*** Iteration 1 ***
-Inferred tau and theta parameters:                       
-theta       tau
-C    0.019639       
-A    0.018053       
-B    0.020506       
-AB   0.020471  0.000964
-ABC  0.019852  0.020066
-
-Migration rates:
-source destination        M
-A           B 2.138254
-B           A 2.090163
-
-Proposal results:
-node 1 node 2  gdi 1  gdi 2  merge accepted
-A      B   0.07   0.06            True
-
-Accepted species (2) after iteration 1:	
-(AB,C);
-
-*** Iteration 2 ***
-Inferred tau and theta parameters:                       
-theta       tau
-C    0.019649       
-AB   0.025840       
-ABC  0.019670  0.020204
-
-Proposed results:
-node 1 node 2  gdi 1  gdi 2  merge  accepted
-    AB      C   0.79   0.87            False
-
-Accepted species (2) after iteration 2:
-(AB,C);
-
-All modifications rejected.  Final delimitation reached.
-\end{verbatim}
-\end{small}
-
-During the first iteration of the merge analysis, the $gdi$ score of the $A$ and $B$
-populations was inferred to be below the threshold for distinct species, causing them to
-be merged into the new species $AB$.  The merge proposal between the $AB$ and $C$ species
-in the second iteration is rejected, leaving two species, the known correct delimitation
-(fig.~\ref{fig:ABC-demo}b).
-
-The control files and data files are all provided in the supplementary materials.
-
-
+\newpage
 \section{Empirical examples}
 
 \subsection{Species delimitation in the genus Giraffa}
 
 \begin{figure}[t]
     \centering %
-    \includegraphics[scale=0.10]{figs/fig-giraffe} %
-    \includegraphics[scale=0.10]{figs/fig-giraffe-results}  %
+    \includegraphics[scale=0.25]{figs/fig-giraffe} %
+    \includegraphics[width=\linewidth]{figs/Giraffe/giraffe_progress_vector}  %
     
-    \caption{\red{[For each of the empirical examples, perhaps include a picture of the
-      animal, a map showing geographical distribution, the guide tree, and the merge and
-      split results.]} (\textbf{a}) The geographical distributions of nine subspecies of
+    \caption{(\textbf{a}) The geographical distributions of nine subspecies of
    giraffa, modified from \citet{Petzold2020}, figure.  (\textbf{b}) The hierarchical
-   split algorithm supports 3 species, while (\textbf{c}) the hierarchical merge
-   algorithm supports 6 species.  \red{[colours on the map and on the tree do not seem
-      to match.]}  \\ %
-   Merge and Split analyses in the Giraffe and Okapia dataset. Top shows starting
-   delimitation with migration patterns. Merge and split analyses converge to three
-   giraffe species, which correspond to the geographically separated Southern,
-   Eastern, and Northern metapopulations. %
+   split algorithm supports 3 species, while (\textbf{c}) The hierarchical merge
+   algorithm supports 5 species.
 } \label{fig:giraffe}
 \end{figure}
 
-\textbf{Data.}  Species delimitation in the genetically isolated, but
+Species delimitation in the genetically isolated, but
 phenotypically convergent Giraffes has generated
 sizeable controversy (Fišer et al., 2018). Based
 on morphological characters and molecular data,
@@ -521,7 +387,7 @@ subspecies ( \textit{camelopardalis},
 population genetic approaches, such as the program \textsc{structure} and the
 phylogenetic approaches implemented in MrBayes, PhyML, and SuperTRI all supported three
 species. However, the MSC based methods in *BEAST, STACEY, and \textsc{bpp} strongly
-supported five species, which was the maximum that was tested. 
+supported five species. 
 
 
 Based on the observations of mitochondrial haplotypes and
@@ -530,7 +396,7 @@ specified between the \textit{tippelskirchi} and \textit{reticulata}, as well as
 \textit{reticulata} and \textit{rothschildi} subspecies.  The migration rate was assigned
 the prior ($\Gamma (1,100)$) with mean 0.01 migrant individuals per generation.  Merge and
 split analyses were conducted with the animal specific $gdi$ thresholds of 0.3 and 0.7, as
-recommended by \citet{Jackson2017}.
+recommended by \citet{Jackson2017} (master control files available in \ref{fig:giraffe_mcf_merge} and \ref{fig:giraffe_mcf_split})..
 
 The split algorithm suggested three species while the merge
 algorithm suggested five (fig.~\ref{fig:giraffe}).  Both grouped the Eastern populations
@@ -541,20 +407,18 @@ merge algorithm recognized four species.
 
 
 
-
+\newpage
 \subsection{Species delimitation in milksnakes (\textit{Lampropeltis triangulum})}
 
 \begin{figure}
     \centering %
-    \includegraphics[scale=0.24]{figs/fig-miksnakes} %
-    \includegraphics[scale=0.18]{figs/fig-miksnakes-results} %
+    \includegraphics[scale=0.5]{figs/miksnakes} %
+    \includegraphics[scale=0.5]{figs/fig-miksnakes-results} %
     
-    \caption{Species delimitation hypotheses in \textit{Lampropeltis triangulum}.
+    \caption{\textbf{Top:} Species delimitation hypotheses in \textit{Lampropeltis triangulum}.
     \textbf{a)} Three-species, and one-species delimitation hypotheses suggested by
     \citet{Chambers2020}.  \textbf{b)} Starting delimitation, and results from merge and
     split analysis. \\ %
-    Coloured dots represent the sampling location and original classification of
-    individuals (blue: \textit{triangulum}, green: \textit{gentilis}). %
 } \label{fig:milksnake}
 \end{figure} 
 
@@ -583,9 +447,9 @@ These results also echo the simulations of \cite{Barley2018}, who demonstrated t
 geographically separated clusters of individuals from
 a single species as distinct species entities.
 
-We analyzed the data using our pipeline, using the guide tree of ???, with no migration
+We analyzed the data using our pipeline, using the guide tree of \citet{Chambers2020}, with no migration
 rates assumed (fig.~\ref{fig:milksnake}).  Merge and split algorithms were run using $gdi$
-thresholds of 0.3 and 0.7.
+thresholds of 0.3 and 0.7 (master control files available in \ref{fig:milksnake_mcf_merge} and \ref{fig:milksnake_mcf_split}).
 
 The merge algorithm established an upper bound of five species.  When compared with the
 three-species hypothesis that was the suggested upper bound by \citet{Chambers2020}, two
@@ -593,27 +457,36 @@ of the species (\textit{elapsoides} and \textit{triangulum}) were identical, but
 HMDelimit identified additional diversity in the \textit{polyzona} branch, marking each
 population as a distinct species.  The split analysis only supported a single species.
 
+\begin{figure}
+	\centering %
+	\includegraphics[scale=0.5]{figs/miksnakes_EW} %
+	
+	\caption{East-West splits. Coloured dots represent the sampling location and original classification of
+		individuals (blue: \textit{triangulum}, green: \textit{gentilis}). %
+	} \label{fig:milksnake_EW}
+\end{figure} 
+
 We conducted a second analysis using only the 38 individuals from the \textit{gentilis},
 \textit{triangulum}, and \textit{alterna} populations (which acted as an outgroup in all
 analyses).  The assignment of individuals to the \textit{gentilis} and \textit{triangulum}
-populations was varied in each analysis, according to the five arbitrary East-West splits of \cite{Chambers2020} (fig.~\ref{fig:milksnake}). Merge and split analyses were ran using the settings as above.  
+populations was varied in each analysis, according to the five arbitrary East-West splits of \cite{Chambers2020} (fig.~\ref{fig:milksnake}). 
+Merge and split analyses were ran using the settings as above (master control files available in \ref{fig:milksnake_EW_mcf} and \ref{fig:milksnake_EW_shell}). 
 
 For all five of the East-West geographic splits tested, our merge and split analyses converged on an identical result,
 merging the \textit{gentilis} and \textit{triangulum} populations into a single species, congruent with the suggestions of \cite{Chambers2020}.
 
 
 
-\subsection{Introgression and species delimitation in the longear sunfish (\textit{Lepomis
-        megalotis}).}
+\subsection{Introgression and species delimitation in the longear sunfish (\textit{Lepomis megalotis}).}
 
 \begin{figure}[t]
     \centering %
-    \includegraphics[scale=0.4]{figs/fig-longear-fish-map}
-    \includegraphics[scale=0.2]{figs/fig-longear-fish-results}
+    \includegraphics[scale=0.3]{figs/Sunfish/Lepomis_megalotis}
+    \includegraphics[scale=0.5]{figs/fig-longear-fish-results}
     
     \caption{Species delimitation in the Longear Sunfish \textit{Lepomis megalotis}.
         Both the merge and split algorithms support a single species. %
-    } \label{fig:longear-fish}
+    } \label{fig:sunfish}
 \end{figure}
 
 The longear sunfish (\textit{Lepomis megalotis}) is a freshwater fish in the sunfish
@@ -633,16 +506,17 @@ of gene flow, and find evidence for multiple instances of significant historical
 ongoing genetic exchange.  This may be problematic, as their genetic delimitation procedure
 did not account for the patterns of gene flow observed.
 
-We reanalyzed the data, taking into account migration between the subspecies.  Based on
-presence of hybridized individuals, migration from the \textit{megalotis} population to
-the \textit{pelastes}, \textit{solis}, and \textit{ozark} populations was specified.
+We reanalyzed the data, taking into account migration between the subspecies.  Based on the hybridization patterns observed by \cite{Kim2022}, migration from the \textit{megalotis} population to
+the \textit{pelastes}, \textit{solis}, and \textit{ozark} populations was specified. The migration rate was assigned
+the prior ($\Gamma (1,100)$) with mean 0.01 migrant individuals per generation. Merge and split algorithms were run using $gdi$
+thresholds of 0.3 and 0.7 (master control files available in \ref{fig:sunfish_mcf_merge} and \ref{fig:sunfish_mcf_split}).
 
 Both merge and split analyses supported a single species.  This is congruent with the $gdi$
 based delimitation of \citet{Kim2022}, who found that all populations have $gdi$ values
 below the threshold for distinct species status.
 
 
-
+\newpage
 \section{Discussion}
 
 \subsection{Challenges of heuristic species delimitation}
@@ -710,7 +584,6 @@ decide whether there are one or two species, even though the data were simulated
 flow, and M2-m was not considered.  Alternatively one may insist species status only if
 there is no significant amount of gene flow (i.e., only if M2-0 wins over M2-m), and
 consider M2-m as representing one species.  This approach may suffer from over-lumping. 
-\red{[Generate an example.  What about the $ABCDX$ dataset?]}
 
 It is not so clear how to incorporate gene flow in the hierarchical merge and split
 algorithms.  In \citet{Leache2019}, we used MSC with no gene flow (M2-0) to construct
@@ -772,73 +645,108 @@ illustrate the details of implementation.
 
 A control file is used to specify the analysis procedure.
 
-\textbf{Output.}  The program output is self-explanatory (fig.~\ref{fig:ABCDX-output}).
-
-\begin{footnotesize}
+\begin{figure}[h]
+	\footnotesize
     \begin{verbatim}
-        seqfile = Leache_2019_sequences.txt
-        Imapfile = Leache_2019_starting_populations.txt
-        guide tree = ((A, B), (C, D)), X);
-        
-        mode = merge
-        GDI threshold = 0.2
-        decision criteria = all
-        
-        burnin = 50000
-        nsample = 100000
-    \end{verbatim}
-\end{footnotesize}
-\texttt{seqfile} is the sequence alignment file in \textsc{phylip} formatt. 
-\texttt{Imapfile} specifies the mapping of individuals to populations.  \texttt{guide
-    tree} is a Newick representation of the guide tree topology.  \texttt{mode} specifies
-the algorithm, with \texttt{split} for hierarchical split and \texttt{merge} for
-hierarchical merge. \texttt{GDI threshold} specifies the \textit{gdi} value below which two
-populations are merged into a candidate species.  \texttt{decision criteria} specifies
-how the \textit{gdi} values should be interpreted.  As a mutation rate is not specified,
-the number of generations cannot be inferred.  Accordingly, the decision criteria of
-\texttt{all} currently indicates that both \textit{gdi} values need to be less than the
-threshold (0.2) for two populations to be merged.  \texttt{burnin} and \texttt{nsample}
-specify the settings for the MCMC run.
+# output
+output_directory = res_sim_merge
 
+# input files
+Imapfile = Leache_2019_starting_populations.txt
+seqfile = Leache_2019_sequences.txt
+
+# guide tree
+guide_tree = ((A, B), (C, D)), X);
+
+# hierarchical algo. parameters
+mode = merge
+GDI threshold = <0.2
+
+# computational parameters
+threads = 16
+burnin = 50000
+nsample = 100000
+    \end{verbatim}
+
+	\caption{Control file for the ABCDX merge analysis, presented in fig. \ref{fig:giraffe}. %
+} \label{fig:ABCDX_mcf}
+\end{figure}
+
+\texttt{output directory} specifies the location where results will be written.
+\texttt{seqfile} is the sequence alignment file in \textsc{phylip} formatt. 
+\texttt{Imapfile} specifies the mapping of individuals to populations.  
+\texttt{guide tree} is a Newick representation of the guide tree topology.  
+\texttt{mode} specifies the direction of the algorithm.
+\texttt{GDI threshold} specifies the \textit{gdi} value below which two populations are merged into a candidate species. 
+\texttt{threads} specifies the number of cpu threads used in the calculations. 
+\texttt{burnin} and \texttt{nsample} specify the settings for the MCMC run.
+
+\textbf{Output.}  The program output is self-explanatory (fig.~\ref{fig:ABCDX-output}).
 
 \begin{figure}
     \centering
     \footnotesize
     
     \begin{verbatim}
-        ACCEPTED SPECIES IN STARTING DELIMITATION:
-        A, B, C, D, X
-        
-        ITERATION 1:
-        PROPOSED MERGE   GDI 1   GDI 2   MERGE ACCEPTED
-        'A', 'B'         0.0478  0.0326  True
-        'C', 'D'         0.0283  0.0229  True
-        
-        THE FOLLOWING PROPOSALS TO MERGE WERE ACCEPTED:
-        1) 'A', 'B' -> 'AB'
-        2) 'C', 'D' -> 'CD'
-        
-        ACCEPTED SPECIES AFTER ITERATION 1:
-        AB, CD, X
-        
-        ITERATION 2:
-        PROPOSED MERGE   GDI 1   GDI 2   MERGE ACCEPTED
-        'AB', 'CD'       0.0689  0.0475  True 
-        
-        THE FOLLOWING PROPOSALS TO MERGE WERE ACCEPTED:
-        1) 'AB', 'CD' -> 'ABCD'
-        
-        ACCEPTED SPECIES AFTER ITERATION 2:
-        ABCD, X
-        
-        ITERATION 3:
-        PROPOSED MERGE   GDI 1   GDI 2   MERGE ACCEPTED
-        'ABCD', 'X'      0.3749  0.8766  False
-        
-        ACCEPTED SPECIES AFTER ITERATION 3:
-        ABCD, X
-        
-        ALL PROPOSALS REJECTED, FINAL DELIMITATION REACHED
+Accepted species (5) in starting delimitation:
+((A, B), (C, D)), X);
+
+*** Iteration 1 ***
+
+Inferred tau and theta parameters:
+        theta   tau
+X       0.0098	
+A       0.0138	
+B       0.0202	
+C       0.0212	
+D       0.0263	
+ABCDX   0.0368  0.0101
+ABCD    0.0432  0.0006
+AB      0.0128  0.0003
+CD      0.0204  0.0002
+
+Proposal results:
+Node pair        gdi 1   gdi 2   merge_accepted
+'A', 'B'         0.05    0.03    True
+'C', 'D'         0.03    0.02    True
+
+Accepted species (3) after iteration 1:
+((AB, CD), X);
+
+*** Iteration 2 ***
+
+Inferred tau and theta parameters:
+        theta   tau
+X       0.0098	
+AB      0.0194	
+CD      0.0286	
+ABCDX   0.0367  0.0101
+ABCD    0.0428  0.0006
+
+Proposal results:
+Node pair        gdi 1   gdi 2   merge_accepted
+'AB', 'CD'       0.07    0.05    True 
+
+Accepted species (2) after iteration 2:
+(ABCD, X);
+
+*** Iteration 3 ***
+
+Inferred tau and theta parameters:
+        theta   tau
+X       0.0098
+ABCD    0.0441	
+ABCDX   0.0365  0.0102
+
+
+Proposal results:
+Node pair        gdi 1   gdi 2   merge_accepted
+'ABCD', 'X'      0.39    0.87    False
+
+Accepted species (2) after iteration 3:
+(ABCD, X);
+
+All modifications rejected. Final delimitation reached.
     \end{verbatim}
     
     \caption{Screen output from running the pipeline to analyze the simulated dataset of
@@ -846,59 +754,345 @@ specify the settings for the MCMC run.
     } \label{fig:ABCDX-output}
 \end{figure}
 
+\clearpage
+\newpage
+\subsection{Giraffe control files}
+
+\begin{figure}[h]
+	\footnotesize
+	\begin{verbatim}
+
+# Notes: species are renamed such that
+#
+# gir_ang = giraffa+angolensis
+# tip_tho = tippelskirchi+thornicrofti
+# cam_rot_ant = camelopardalis+rothschildi+antiquorum
+# per = peralta
+# ret = reticulata
+		
+# output
+output_directory = res_giraffe_merge
+
+# input files
+Imapfile = Imap_Giraffe.txt
+seqfile = MSA_Giraffe.txt
+
+# guide tree
+guide_tree = ((gir_ang,tip_tho),((cam_rot_ant,per),ret));
+
+# migration events and priors
+migration = {
+    ret -> tip_tho,
+    tip_tho -> ret,
+    ret -> cam_rot_ant,
+    cam_rot_ant -> ret,
+}
+migprior = 0.1 10
+
+# hierarchical algo. parameters
+mode = merge
+gdi_threshold = <0.3
+
+# computational parameters
+threads = 16
+burnin = 50000
+nsample = 200000
+	\end{verbatim}
+
+	\caption{Control file for the merge analysis in Giraffes, presented in fig. \ref{fig:giraffe}. %
+	} \label{fig:giraffe_mcf_merge}
+\end{figure}
+
+\begin{figure}[h]
+	\footnotesize
+	\begin{verbatim}
+# output
+output_directory = res_giraffe_split
+
+# input files
+Imapfile = Imap_Giraffe.txt
+seqfile = MSA_Giraffe.txt
+
+# guide tree
+guide_tree = ((gir_ang,tip_tho),((cam_rot_ant,per),ret));
+
+# migration events and priors
+migration = {
+    ret -> tip_tho,
+    tip_tho -> ret,
+    ret -> cam_rot_ant,
+    cam_rot_ant -> ret,
+}
+migprior = 0.1 10
+
+# hierarchical algo. parameters
+mode = split
+gdi_threshold = >0.7
+
+# computational parameters
+threads = 16
+burnin = 50000
+nsample = 200000
+	\end{verbatim}
+	
+	\caption{Control file for the split analysis in Giraffes, presented in fig. \ref{fig:giraffe}. %
+	} \label{fig:giraffe_mcf_split}
+\end{figure}
+
+\clearpage
+\newpage
+\subsection{Milksnake control files}
+
+\begin{figure}[h]
+	\footnotesize
+	\begin{verbatim}
+# Notes: species are renamed such that
+#
+# Po = polyzona
+# Ab = abnorma
+# Mi = micropholis
+# An = annulata
+# Ge = gentilis
+# Tr = triangulum
+# El = elapsoides
+
+# output
+output_directory = output_directory = res_milksnake_merge
+
+# input files
+Imapfile = Imap_Lampropeltis.txt
+seqfile = MSA_Lampropeltis.txt
+
+# guide tree
+guide_tree = (((Po, (Ab, Mi)), (An, (Ge, Tr))), El);
+
+# hierarchical algo. parameters
+mode = merge
+gdi_threshold = <0.3
+
+# computational parameters
+threads = 16
+burnin = 50000
+nsample = 200000
+	\end{verbatim}
+	
+	\caption{Control file for the merge analysis in Milksnakes, presented in fig. \ref{fig:milksnake}. %
+	} \label{fig:milksnake_mcf_merge}
+\end{figure}
+
+\begin{figure}[h]
+	\footnotesize
+	\begin{verbatim}
+# output
+output_directory = output_directory = res_milksnake_split
+
+# input files
+Imapfile = Imap_Lampropeltis.txt
+seqfile = MSA_Lampropeltis.txt
+
+# guide tree
+guide_tree = (((Po, (Ab, Mi)), (An, (Ge, Tr))), El);
+
+# hierarchical algo. parameters
+mode = split
+gdi_threshold = >0.7
+
+# computational parameters
+threads = 16
+burnin = 50000
+nsample = 200000
+	\end{verbatim}
+	
+	\caption{Control file for the split analysis in Milksnakes, presented in fig. \ref{fig:milksnake}. %
+	} \label{fig:milksnake_mcf_split}
+\end{figure}
+
+\begin{figure}[h]
+	\footnotesize
+	\begin{verbatim}
+# output
+output_directory = # will be set from the command line
+
+# input files
+Imapfile = # will be set from the command line
+seqfile = trigentalt.txt
+
+guide_tree = ((Ge,Tr),Al);
+
+mode = merge
+gdi_threshold = <0.3
+
+threads = 16
+burnin = 50000
+nsample = 100000
+	\end{verbatim}
+	
+	\caption{Control file for the East-West splits, presented in fig. \ref{fig:milksnake}. The \texttt{Imapfile} and \texttt{output directory} parameters are left empty, as they will be provided via the command line.
+	This ensures that the same basic control file can be used for each of the five alternative East-West delimitations.%
+	} \label{fig:milksnake_EW_mcf}
+\end{figure}
+
+\begin{figure}[h]
+	\footnotesize
+	\begin{verbatim}
+HMDelimit --mcfile mcf_milksnake_EW.txt --mcfpor \
+Imapfile = trigent1alt.Imap.txt, output_directory = res_EW_1 
+
+HMDelimit --mcfile mcf_milksnake_EW.txt --mcfpor \
+Imapfile = trigent2alt.Imap.txt, output_directory = res_EW_2 
+
+HMDelimit --mcfile mcf_milksnake_EW.txt --mcfpor \
+Imapfile = trigent3alt.Imap.txt, output_directory = res_EW_3 
+
+HMDelimit --mcfile mcf_milksnake_EW.txt --mcfpor \
+Imapfile = trigent4alt.Imap.txt, output_directory = res_EW_4 
+
+HMDelimit --mcfile mcf_milksnake_EW.txt --mcfpor \
+Imapfile = trigent5alt.Imap.txt, output_directory = res_EW_5
+	\end{verbatim}
+	
+	\caption{Shell script used to iterate through alternative East-West delimitation hypotheses in Milksnakes, presented in fig. \ref{fig:milksnake}. The \texttt{-mcfpor} (master control file parameter override)
+	flag is used to override parameters of the mcf via the command line interface, setting the Imap file to one of the alternative East-West delimitations, and specifying the individual output directories for each analysis. %
+	} \label{fig:milksnake_EW_shell}
+\end{figure}
 
 
-\FloatBarrier
+\clearpage
+\newpage
+\subsection{Sunfish control files}
+
+\begin{figure}[h]
+	\footnotesize
+	\begin{verbatim}
+# Notes: species are renamed such that
+#
+# PEL = pelastes
+# OZK = ozark
+# MEG = megalotis
+# LIT = ouachita
+# SOL = solis
+# AQU = aquilensis
+
+# output
+output_directory = res_sunfish_merge
+
+# input files
+Imapfile =  Imap_Sunfish.txt
+seqfile = MSA_Sunfish.txt
+
+# guide tree
+guide_tree = (((((PEL,OZK),MEG),LIT),SOL),AQU);
+
+# migration events and priors
+migration = {
+    MEG -> PEL,
+    MEG -> SOL,
+    MEG -> OZK
+}
+migprior = 0.1 10
+
+# hierarchical algo. parameters
+mode = merge
+gdi_threshold = <0.3
+
+# computational parameters
+threads = 16
+burnin = 50000
+nsample = 200000
+	\end{verbatim}
+	
+	\caption{Control file for the merge analysis in Sunfish, presented in fig. \ref{fig:sunfish}. %
+	} \label{fig:sunfish_mcf_merge}
+\end{figure}
+
+\begin{figure}[h]
+	\footnotesize
+	\begin{verbatim}
+# output
+output_directory = res_sunfish_split
+
+# input files
+Imapfile =  Imap_Sunfish.txt
+seqfile = MSA_Sunfish.txt
+
+# guide tree
+guide_tree = (((((PEL,OZK),MEG),LIT),SOL),AQU);
+
+# migration events and priors
+migration = {
+    MEG -> PEL,
+    MEG -> SOL,
+    MEG -> OZK
+}
+migprior = 0.1 10
+
+# hierarchical algo. parameters
+mode = split
+gdi_threshold = >0.7
+
+# computational parameters
+threads = 16
+burnin = 50000
+nsample = 200000
+	\end{verbatim}
+	
+	\caption{Control file for the split analysis in Sunfish, presented in fig. \ref{fig:sunfish}. %
+	} \label{fig:sunfish_mcf_split}
+\end{figure}
+
+\clearpage
+\newpage
 
 \begin{sidewaystable*}
-\vspace{5.2in}
-\begin{small}
-\caption{Rate matrix for Markov chain describing transitions between states in
-    multispecies coalescent with migration model with two populations ($A$ and $B$) and three
-    sequences ($a_1$, $a_2$, and $b$). %
-} \label{table:Q}
-\begin{tabular}{lccccccccccccccccccccccc} 
-    \toprule
-    & $AAA$ & $AAB$ & $ABA$ & $ABB$ & $BAA$ & $BAB$ & $BBA$ & $BBB$ & $A_{a_1}A$ & $A_{a_2}A$ & $A_{b}A$ & $C_{a_1}B$ & $B_{a_2}B$ & $B_{b}B$ & $A_{a_1}B$ & $A_{a_2}B$ & $A_{b}B$ & $AB_{a_1}$ & $AB_{a_2}$ & $AB_{b}$ & $A|B$ \\  
-    \midrule
-    $AAA$ & $\cdot$ & $w_{BA}$ & $w_{BA}$ & & $w_{BA}$ & & & & $c_A$ & $c_A$ & $c_A$ & & & & & & & & & & \\ 
-    $AAB$ & $w_{AB}$ & $\cdot$ & & $w_{BA}$ & & $w_{BA}$ & & & & & & & & & & & & & & $c_A$ & \\
-    $ABA$ & $w_{AB}$ & & $\cdot$ & $w_{BA}$ & & & $w_{BA}$ & & & & & & & & & & & & $c_A$ & & \\
-    $ABB$ & & $w_{AB}$ & $w_{AB}$ & $\cdot$ & & & & $w_{BA}$ & & & & & & & $c_B$ & & & & & & \\
-    $BAA$ & $w_{AB}$ & & & & $\cdot$ & $w_{BA}$ & $w_{BA}$ & & & & & & & & & & & $c_A$ & & & \\
-    $BAB$ & & $w_{AB}$ & & & $w_{AB}$ & $\cdot$ & & $w_{BA}$ & & & & & & & & $c_B$ & & & & & \\
-    $BBA$ & & & $w_{AB}$ & & $w_{AB}$ & & $\cdot$ & $w_{BA}$ & & & & & & & & & $c_B$ & & & & \\
-    $BBB$ & & & & $w_{AB}$ & & $w_{AB}$ & $w_{AB}$ & $\cdot$ & & & & $c_B$ & $c_B$ & $c_B$ & & & & & & & \\
-    $A_{a_1}A$ & & & & & & & & & $\cdot$ & & & & & & $w_{BA}$ & & & $w_{BA}$ & & & $c_A$ \\
-    $A_{a_2}A$ & & & & & & & & & & $\cdot$ & & & & & & $w_{BA}$ & & & $w_{BA}$ & & $c_A$ \\
-    $A_bA$ & & & & & & & & & & & $\cdot$ & & & & & & $w_{BA}$ & & & $w_{BA}$ & $c_A$ \\
-    $B_{a_1}B$ & & & & & & & & & & & & $\cdot$ & & & $w_{AB}$ & & & $w_{AB}$ & & & $c_B$ \\
-    $B_{a_2}B$ & & & & & & & & & & & & & $\cdot$ & & & $w_{AB}$ & & & $w_{AB}$ & & $c_B$ \\
-    $B_bB$ & & & & & & & & & & & & & & $\cdot$ & & & $w_{AB}$ & & & $w_{AB}$ & $c_B$ \\
-    $A_{a_1}B$ & & & & & & & & & $w_{AB}$ & & & $w_{BA}$ & & & $\cdot$ & & & & & & \\
-    $A_{a_2}B$ & & & & & & & & & & $w_{AB}$ & & & $w_{BA}$ & & & $\cdot$ & & & & & \\
-    $A_bB$ & & & & & & & & & & & $w_{AB}$ & & & $w_{BA}$ & & & $\cdot$ & & & & \\
-    $AB_{a_1}$ & & & & & & & & & $w_{AB}$ & & & $w_{BA}$ & & & & & & $\cdot$ & & & \\
-    $AB_{a_2}$ & & & & & & & & & & $w_{AB}$ & & & $w_{BA}$ & & & & & & $\cdot$ & & \\
-    $AB_b$ & & & & & & & & & & & $w_{AB}$ & & & $w_{BA}$ & & & & & & $\cdot$ & \\
-    $A|B$ & & & & & & & & & & & & & & & & & & & & & $\cdot$ \\
-    \bottomrule
-\end{tabular}
-
-\noindent Note.--- $w_{AB} = 4M_{AB}/\theta_B = m_{AB}/\mu and w_{BA} = 4M_{BA}/\theta_A =
-m_{BA}/\mu$ are mutation-scaled migration rates, and $c_A = 2/\theta_A$ and $c_B =
-2/\theta_B$ are the coalescent rates.  The state of the chain is given by the population
-IDs ($A$ or $B$) and sequence IDs (such as $a_1$, $a_2$, $a_1a_2$).  For example the
-initial state $A_{a_1}A_{a_2}B_b$ means that the three sequences $a_1, a_2$, and $b$ are
-from populations $A$, $A$, and $B$, respectively.  States with three sequences are
-abbreviated, with the three sequences assumed to be in the order $a_1, a_2, b$ so that the
-sequence IDs are suppressed. Thus $A_{a_1}A_{a_2}B_b$ is `$AAB$'.  State $A_{a_1a_2}B_b$
-means that two sequences remain in the sample, with the ancestor of sequences $a_1$ and
-$a_2$ is in population $A$ while sequence $b$ is in population $B$. This is abbreviated
-`$AB_b$', with the sequence ID `$a_1a_2$' suppressed.  `$A|B$' is an absorbing state in
-which only one sequence remains in the sample, in either $A$ or $B$, after two coalescent
-events have occurred.  From \citet{Leache2019}.
-\end{small}
+	\vspace{5.2in}
+	\begin{small}
+		\caption{Rate matrix for Markov chain describing transitions between states in
+			multispecies coalescent with migration model with two populations ($A$ and $B$) and three
+			sequences ($a_1$, $a_2$, and $b$). %
+		} \label{table:Q}
+		\begin{tabular}{lccccccccccccccccccccccc} 
+			\toprule
+			& $AAA$ & $AAB$ & $ABA$ & $ABB$ & $BAA$ & $BAB$ & $BBA$ & $BBB$ & $A_{a_1}A$ & $A_{a_2}A$ & $A_{b}A$ & $C_{a_1}B$ & $B_{a_2}B$ & $B_{b}B$ & $A_{a_1}B$ & $A_{a_2}B$ & $A_{b}B$ & $AB_{a_1}$ & $AB_{a_2}$ & $AB_{b}$ & $A|B$ \\  
+			\midrule
+			$AAA$ & $\cdot$ & $w_{BA}$ & $w_{BA}$ & & $w_{BA}$ & & & & $c_A$ & $c_A$ & $c_A$ & & & & & & & & & & \\ 
+			$AAB$ & $w_{AB}$ & $\cdot$ & & $w_{BA}$ & & $w_{BA}$ & & & & & & & & & & & & & & $c_A$ & \\
+			$ABA$ & $w_{AB}$ & & $\cdot$ & $w_{BA}$ & & & $w_{BA}$ & & & & & & & & & & & & $c_A$ & & \\
+			$ABB$ & & $w_{AB}$ & $w_{AB}$ & $\cdot$ & & & & $w_{BA}$ & & & & & & & $c_B$ & & & & & & \\
+			$BAA$ & $w_{AB}$ & & & & $\cdot$ & $w_{BA}$ & $w_{BA}$ & & & & & & & & & & & $c_A$ & & & \\
+			$BAB$ & & $w_{AB}$ & & & $w_{AB}$ & $\cdot$ & & $w_{BA}$ & & & & & & & & $c_B$ & & & & & \\
+			$BBA$ & & & $w_{AB}$ & & $w_{AB}$ & & $\cdot$ & $w_{BA}$ & & & & & & & & & $c_B$ & & & & \\
+			$BBB$ & & & & $w_{AB}$ & & $w_{AB}$ & $w_{AB}$ & $\cdot$ & & & & $c_B$ & $c_B$ & $c_B$ & & & & & & & \\
+			$A_{a_1}A$ & & & & & & & & & $\cdot$ & & & & & & $w_{BA}$ & & & $w_{BA}$ & & & $c_A$ \\
+			$A_{a_2}A$ & & & & & & & & & & $\cdot$ & & & & & & $w_{BA}$ & & & $w_{BA}$ & & $c_A$ \\
+			$A_bA$ & & & & & & & & & & & $\cdot$ & & & & & & $w_{BA}$ & & & $w_{BA}$ & $c_A$ \\
+			$B_{a_1}B$ & & & & & & & & & & & & $\cdot$ & & & $w_{AB}$ & & & $w_{AB}$ & & & $c_B$ \\
+			$B_{a_2}B$ & & & & & & & & & & & & & $\cdot$ & & & $w_{AB}$ & & & $w_{AB}$ & & $c_B$ \\
+			$B_bB$ & & & & & & & & & & & & & & $\cdot$ & & & $w_{AB}$ & & & $w_{AB}$ & $c_B$ \\
+			$A_{a_1}B$ & & & & & & & & & $w_{AB}$ & & & $w_{BA}$ & & & $\cdot$ & & & & & & \\
+			$A_{a_2}B$ & & & & & & & & & & $w_{AB}$ & & & $w_{BA}$ & & & $\cdot$ & & & & & \\
+			$A_bB$ & & & & & & & & & & & $w_{AB}$ & & & $w_{BA}$ & & & $\cdot$ & & & & \\
+			$AB_{a_1}$ & & & & & & & & & $w_{AB}$ & & & $w_{BA}$ & & & & & & $\cdot$ & & & \\
+			$AB_{a_2}$ & & & & & & & & & & $w_{AB}$ & & & $w_{BA}$ & & & & & & $\cdot$ & & \\
+			$AB_b$ & & & & & & & & & & & $w_{AB}$ & & & $w_{BA}$ & & & & & & $\cdot$ & \\
+			$A|B$ & & & & & & & & & & & & & & & & & & & & & $\cdot$ \\
+			\bottomrule
+		\end{tabular}
+		
+		\noindent Note.--- $w_{AB} = 4M_{AB}/\theta_B = m_{AB}/\mu and w_{BA} = 4M_{BA}/\theta_A =
+		m_{BA}/\mu$ are mutation-scaled migration rates, and $c_A = 2/\theta_A$ and $c_B =
+		2/\theta_B$ are the coalescent rates.  The state of the chain is given by the population
+		IDs ($A$ or $B$) and sequence IDs (such as $a_1$, $a_2$, $a_1a_2$).  For example the
+		initial state $A_{a_1}A_{a_2}B_b$ means that the three sequences $a_1, a_2$, and $b$ are
+		from populations $A$, $A$, and $B$, respectively.  States with three sequences are
+		abbreviated, with the three sequences assumed to be in the order $a_1, a_2, b$ so that the
+		sequence IDs are suppressed. Thus $A_{a_1}A_{a_2}B_b$ is `$AAB$'.  State $A_{a_1a_2}B_b$
+		means that two sequences remain in the sample, with the ancestor of sequences $a_1$ and
+		$a_2$ is in population $A$ while sequence $b$ is in population $B$. This is abbreviated
+		`$AB_b$', with the sequence ID `$a_1a_2$' suppressed.  `$A|B$' is an absorbing state in
+		which only one sequence remains in the sample, in either $A$ or $B$, after two coalescent
+		events have occurred.  From \citet{Leache2019}.
+	\end{small}
 \end{sidewaystable*}
+
 
 \end{document}

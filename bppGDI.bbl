@@ -1,11 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[Alexander and Lange(2011)Alexander and Lange]{Alexander2011}
-Alexander, D.~H. and Lange, K. 2011.
-\newblock Enhancements to the {ADMIXTURE} algorithm for individual ancestry
-  estimation.
-\newblock {\em BMC Bioinformat.}, {12}: 246.
-
 \bibitem[Bamberger {\em et~al.}(2022)Bamberger, Xu, and
   Hausdorf]{Bamberger2022}
 Bamberger, S., Xu, J., and Hausdorf, B. 2022.
@@ -18,16 +12,6 @@ Barley, A.~J., Brown, J.~M., and Thomson, R.~C. 2018.
 \newblock Impact of model violations on the inference of species boundaries
   under the multispecies coalescent.
 \newblock {\em Syst. Biol.}, {67}(2): 269--284.
-
-\bibitem[Bolotov {\em et~al.}(2017)Bolotov, Aksenova, Bespalaya, Gofarov,
-  Kondakov, Paltser, Stefansson, Travina, and Vinarski]{Bolotov2017}
-Bolotov, I.~N., Aksenova, O.~V., Bespalaya, Y.~V., Gofarov, M.~Y., Kondakov,
-  A.~V., Paltser, I.~S., Stefansson, A., Travina, O.~V., and Vinarski, M.~V.
-  2017.
-\newblock Origin of a divergent {mtDNA} lineage of a freshwater snail species,
-  \textit{Radix balthica}, in {Iceland}: cryptic glacial refugia or a
-  postglacial founder event?
-\newblock {\em Hydrobiologia\/}, {787}(1): 73--98.
 
 \bibitem[Campillo {\em et~al.}(2020)Campillo, Barley, and
   Thomson]{Campillo2020}
@@ -42,41 +26,12 @@ Chambers, E.~A. and Hillis, D.~M. 2020.
   geographically widespread taxa.
 \newblock {\em Syst. Biol.}, {69}(1): 184--193.
 
-\bibitem[Chen {\em et~al.}(2019)Chen, Qiu, Jiang, Wang, Lin, Li, Bibi, Yang,
-  Wang, Nie, Su, Liu, Li, Fu, Pan, Liu, Yang, Zhang, Yin, Wang, Zhao, Zhang,
-  Wang, Qin, Liu, Wang, Ren, Zhang, Zeng, da~Fonseca, Wei, Li, Wan, Zhao, Zhu,
-  Wang, Duan, Gao, Zhang, Chen, Hvilsom, Epps, Chemnick, Dong, Mirarab,
-  Siegismund, Ryder, Gilbert, Lewin, Zhang, Heller, and Wang]{Chen2019}
-Chen, L., Qiu, Q., Jiang, Y., Wang, K., Lin, Z., Li, Z., Bibi, F., Yang, Y.,
-  Wang, J., Nie, W., Su, W., Liu, G., Li, Q., Fu, W., Pan, X., Liu, C., Yang,
-  J., Zhang, C., Yin, Y., Wang, Y., Zhao, Y., Zhang, C., Wang, Z., Qin, Y.,
-  Liu, W., Wang, B., Ren, Y., Zhang, R., Zeng, Y., da~Fonseca, R.~R., Wei, B.,
-  Li, R., Wan, W., Zhao, R., Zhu, W., Wang, Y., Duan, S., Gao, Y., Zhang,
-  Y.~E., Chen, C., Hvilsom, C., Epps, C.~W., Chemnick, L.~G., Dong, Y.,
-  Mirarab, S., Siegismund, H.~R., Ryder, O.~A., Gilbert, M. T.~P., Lewin,
-  H.~A., Zhang, G., Heller, R., and Wang, W. 2019.
-\newblock Large-scale ruminant genome sequencing provides insights into their
-  evolution and distinct traits.
-\newblock {\em Science\/}, {364}(6446): eaav6202.
-
-\bibitem[Duda(2021)Duda]{Duda2021}
-Duda, T.~F., J. 2021.
-\newblock Patterns of variation of mutation rates of mitochondrial and nuclear
-  genes of gastropods.
-\newblock {\em BMC Ecol. Evol.}, {21}(1): 13.
-
 \bibitem[Fennessy {\em et~al.}(2016)Fennessy, Bidon, Reuss, Kumar, Elkan,
   Nilsson, Vamberger, Fritz, and Janke]{Fennessy2016}
 Fennessy, J., Bidon, T., Reuss, F., Kumar, V., Elkan, P., Nilsson, M.~A.,
   Vamberger, M., Fritz, U., and Janke, A. 2016.
 \newblock Multi-locus analyses reveal four giraffe species instead of one.
 \newblock {\em Curr. Biol.}, {26}(18): 2543--2549.
-
-\bibitem[Fiser {\em et~al.}(2018)Fiser, Robinson, and Malard]{Fiser2018}
-Fiser, C., Robinson, C.~T., and Malard, F. 2018.
-\newblock Cryptic species as a window into the paradigm shift of the species
-  concept.
-\newblock {\em Mol. Ecol.}, {27}(3): 613--635.
 
 \bibitem[Flouri {\em et~al.}(2018)Flouri, Jiao, Rannala, and Yang]{Flouri2018}
 Flouri, T., Jiao, X., Rannala, B., and Yang, Z. 2018.
@@ -111,11 +66,6 @@ Hirase, S., Yamasaki, Y.~Y., Sekino, M., Nishisako, M., Ikeda, M., Hara, M.,
 Jackson, N.~D., Carstens, B.~C., Morales, A.~E., and O'Meara, B.~C. 2017.
 \newblock Species delimitation with gene flow.
 \newblock {\em Syst. Biol.}, {66}(5): 799--812.
-
-\bibitem[Jiao and Yang(2021)Jiao and Yang]{Jiao2021}
-Jiao, X. and Yang, Z. 2021.
-\newblock Defining species when there is gene flow.
-\newblock {\em Syst. Biol.}, {70}(1): 108--119.
 
 \bibitem[Jiao {\em et~al.}(2021)Jiao, Flouri, and Yang]{Jiao2021MSC}
 Jiao, X., Flouri, T., and Yang, Z. 2021.
@@ -156,11 +106,6 @@ Martin, S.~H., Dasmahapatra, K.~K., Nadeau, N.~J., Salazar, C., Walters, J.~R.,
 \newblock Genome-wide evidence for speciation with gene flow in
   \textit{Heliconius} butterflies.
 \newblock {\em Genome Res.}, {23}(11): 1817--1828.
-
-\bibitem[Petit and Excoffier(2009)Petit and Excoffier]{Petit2009}
-Petit, R. and Excoffier, L. 2009.
-\newblock Gene flow and species delimitation.
-\newblock {\em Trends Ecol. Evol.}, {24}: 386--393.
 
 \bibitem[Petzold and Hassanin(2020)Petzold and Hassanin]{Petzold2020}
 Petzold, A. and Hassanin, A. 2020.
@@ -207,16 +152,6 @@ Ruane, S., Bryson, R.~W., Pyron, R.~A., and Burbrink, F.~T. 2014.
 \newblock Coalescent species delimitation in milksnakes (genus lampropeltis)
   and impacts on phylogenetic comparative analyses.
 \newblock {\em Syst. Biol.}, {63}(2): 231--250.
-
-\bibitem[Schilthuizen(2018)Schilthuizen]{Schilthuizen2018}
-Schilthuizen, M. 2018.
-\newblock {\em Biogeography and Biodiversity of the Aegean\/}.
-\newblock Broken Hill Publishers, Nicosia, Cyprus.
-
-\bibitem[Stankowski and Ravinet(2021)Stankowski and Ravinet]{Stankowski2021}
-Stankowski, S. and Ravinet, M. 2021.
-\newblock Defining the speciation continuum.
-\newblock {\em Evolution\/}, {75}(6): 1256--1273.
 
 \bibitem[Sukumaran and Knowles(2017)Sukumaran and Knowles]{Sukumaran2017}
 Sukumaran, J. and Knowles, L. 2017.
