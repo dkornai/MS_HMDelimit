@@ -26,6 +26,11 @@ Chambers, E.~A. and Hillis, D.~M. 2020.
   geographically widespread taxa.
 \newblock {\em Syst. Biol.}, {69}(1): 184--193.
 
+\bibitem[Degnan(2018)Degnan]{Degnan2018}
+Degnan, J.~H. 2018.
+\newblock Modeling hybridization under the network multispecies coalescent.
+\newblock {\em Syst. Biol.}, {67}(5): 786--799.
+
 \bibitem[Fennessy {\em et~al.}(2016)Fennessy, Bidon, Reuss, Kumar, Elkan,
   Nilsson, Vamberger, Fritz, and Janke]{Fennessy2016}
 Fennessy, J., Bidon, T., Reuss, F., Kumar, V., Elkan, P., Nilsson, M.~A.,
@@ -33,11 +38,24 @@ Fennessy, J., Bidon, T., Reuss, F., Kumar, V., Elkan, P., Nilsson, M.~A.,
 \newblock Multi-locus analyses reveal four giraffe species instead of one.
 \newblock {\em Curr. Biol.}, {26}(18): 2543--2549.
 
+\bibitem[Fiser {\em et~al.}(2018)Fiser, Robinson, and Malard]{Fiser2018}
+Fiser, C., Robinson, C.~T., and Malard, F. 2018.
+\newblock Cryptic species as a window into the paradigm shift of the species
+  concept.
+\newblock {\em Mol. Ecol.}, {27}(3): 613--635.
+
 \bibitem[Flouri {\em et~al.}(2018)Flouri, Jiao, Rannala, and Yang]{Flouri2018}
 Flouri, T., Jiao, X., Rannala, B., and Yang, Z. 2018.
 \newblock Species tree inference with {BPP} using genomic sequences and the
   multispecies coalescent.
 \newblock {\em Mol. Biol. Evol.}, {35}(10): 2585--2593.
+
+\bibitem[Fujita {\em et~al.}(2012)Fujita, Leaché, Burbrink, McGuire, and
+  Moritz]{Fujita2012}
+Fujita, M.~K., Leaché, A.~D., Burbrink, F.~T., McGuire, J.~A., and Moritz, C.
+  2012.
+\newblock Coalescent-based species delimitation in an integrative taxonomy.
+\newblock {\em Trends Ecol. Evol.}, {27}: 480--488.
 
 \bibitem[He {\em et~al.}(2019)He, Li, Yang, Wang, Zhong, Duke, Wu, and
   Shi]{He2019}
@@ -61,11 +79,29 @@ Hirase, S., Yamasaki, Y.~Y., Sekino, M., Nishisako, M., Ikeda, M., Hara, M.,
   marine invertebrates.
 \newblock {\em Mol. Biol. Evol.}, {38}(11): 4683--4699.
 
+\bibitem[Hobolth {\em et~al.}(2011)Hobolth, Andersen, and Mailund]{Hobolth2011}
+Hobolth, A., Andersen, L., and Mailund, T. 2011.
+\newblock On computing the coalescence time density in an
+  isolation-with-migration model with few samples.
+\newblock {\em Genetics\/}, {187}: 1241--1243.
+
+\bibitem[Hudson and Turelli(2003)Hudson and Turelli]{Hudson2003}
+Hudson, R.~R. and Turelli, M. 2003.
+\newblock Stochasticity overrules the ``three-times rule'': genetic drift,
+  genetic draft, and coalescence times for nuclear loci versus mitochondrial
+  {DNA}.
+\newblock {\em Evolution\/}, {57}: 182--190.
+
 \bibitem[Jackson {\em et~al.}(2017)Jackson, Carstens, Morales, and
   O'Meara]{Jackson2017}
 Jackson, N.~D., Carstens, B.~C., Morales, A.~E., and O'Meara, B.~C. 2017.
 \newblock Species delimitation with gene flow.
 \newblock {\em Syst. Biol.}, {66}(5): 799--812.
+
+\bibitem[Jiao and Yang(2021)Jiao and Yang]{Jiao2021}
+Jiao, X. and Yang, Z. 2021.
+\newblock Defining species when there is gene flow.
+\newblock {\em Syst. Biol.}, {70}(1): 108--119.
 
 \bibitem[Jiao {\em et~al.}(2021)Jiao, Flouri, and Yang]{Jiao2021MSC}
 Jiao, X., Flouri, T., and Yang, Z. 2021.
@@ -78,6 +114,17 @@ Kim, D., Bauer, B.~H., and Near, T.~J. 2022.
 \newblock Introgression and species delimitation in the longear sunfish
   \textit{Lepomis megalotis} ({Teleostei: Percomorpha: Centrarchidae}).
 \newblock {\em Syst. Biol.}, {71}(2): 273--285.
+
+\bibitem[Knowles and Carstens(2007)Knowles and Carstens]{Knowles2007}
+Knowles, L.~L. and Carstens, B.~C. 2007.
+\newblock Delimiting species without monophyletic gene trees.
+\newblock {\em Syst. Biol.}, {56}: 887--895.
+
+\bibitem[Kubatko(2019)Kubatko]{Kubatko2019}
+Kubatko, L. 2019.
+\newblock The multispecies coalescent.
+\newblock In D.~Balding, I.~Moltke, and J.~Marioni, editors, {\em Handbook of
+  Statistical Genomics\/}, pages 219--245. Wiley, New York, 4th edition.
 
 \bibitem[Leach\'e {\em et~al.}(2019)Leach\'e, Zhu, Rannala, and
   Yang]{Leache2019}
@@ -153,17 +200,28 @@ Ruane, S., Bryson, R.~W., Pyron, R.~A., and Burbrink, F.~T. 2014.
   and impacts on phylogenetic comparative analyses.
 \newblock {\em Syst. Biol.}, {63}(2): 231--250.
 
+\bibitem[Sites and Marshall(2004)Sites and Marshall]{Sites2004}
+Sites, J. and Marshall, J.~C. 2004.
+\newblock Delimiting species: A renaissance issue in systematic biology.
+\newblock {\em Trends Ecol. Evol.}, {18}: 462--470.
+
+\bibitem[Solis-Lemus {\em et~al.}(2015)Solis-Lemus, Knowles, and
+  Ane]{Solis-Lemus2015}
+Solis-Lemus, C., Knowles, L.~L., and Ane, C. 2015.
+\newblock Bayesian species delimitation combining multiple genes and traits in
+  a unified framework.
+\newblock {\em Evolution\/}, {69}(2): 492--507.
+
 \bibitem[Sukumaran and Knowles(2017)Sukumaran and Knowles]{Sukumaran2017}
 Sukumaran, J. and Knowles, L. 2017.
 \newblock Multispecies coalescent delimits structure, not species.
 \newblock {\em Proc. Natl. Acad. Sci. USA.}, {114}: 1607--1612.
 
-\bibitem[Wells {\em et~al.}(2022)Wells, Carruthers, Munoz-Rodriguez,
-  Sumadijaya, Wood, and Scotland]{Wells2022}
-Wells, T., Carruthers, T., Munoz-Rodriguez, P., Sumadijaya, A., Wood, J. R.~I.,
-  and Scotland, R.~W. 2022.
-\newblock Species as a heuristic: reconciling theory and practice.
-\newblock {\em Syst. Biol.}, {71}(5): 1233--1243.
+\bibitem[Sukumaran {\em et~al.}(2021)Sukumaran, Holder, and
+  Knowles]{Sukumaran2021}
+Sukumaran, J., Holder, M.~T., and Knowles, L.~L. 2021.
+\newblock Incorporating the speciation process into species delimitation.
+\newblock {\em PLoS Comput. Biol.}, {17}(5): e1008924.
 
 \bibitem[Wu {\em et~al.}(2018)Wu, Ng, Yang, Li, and Ge]{Wu2018}
 Wu, W., Ng, W.~L., Yang, J.~X., Li, W.~M., and Ge, X.~J. 2018.
@@ -171,11 +229,6 @@ Wu, W., Ng, W.~L., Yang, J.~X., Li, W.~M., and Ge, X.~J. 2018.
   polymorphisms in a wild relative of banana, \textit{Musa itinerans}, and
   implications for its conservation in subtropical {China}.
 \newblock {\em BMC Plant Biol.}, {18}(1): 194.
-
-\bibitem[Yang(2014)Yang]{Yang2014}
-Yang, Z. 2014.
-\newblock {\em Molecular Evolution: A Statistical Approach\/}.
-\newblock Oxford University Press, Oxford, England.
 
 \bibitem[Yang(2015)Yang]{Yang2015}
 Yang, Z. 2015.
@@ -188,15 +241,22 @@ Yang, Z. and Rannala, B. 2010.
 \newblock Bayesian species delimitation using multilocus sequence data.
 \newblock {\em Proc. Natl. Acad. Sci. USA\/}, {107}: 9264--9269.
 
+\bibitem[Yang and Rannala(2014)Yang and Rannala]{Yang2014}
+Yang, Z. and Rannala, B. 2014.
+\newblock Unguided species delimitation using {DNA} sequence data from multiple
+  loci.
+\newblock {\em Mol. Biol. Evol.}, {31}: 3125--3135.
+
 \bibitem[Yang and Rannala(2017)Yang and Rannala]{Yang2017}
 Yang, Z. and Rannala, B. 2017.
 \newblock Bayesian species identification under the multispecies coalescent
   provides significant improvements to {DNA} barcoding analyses.
 \newblock {\em Mol. Ecol.}, {26}: 3028--3036.
 
-\bibitem[Zhang {\em et~al.}(2011)Zhang, Zhang, Zhu, and Yang]{Zhang2011}
-Zhang, C., Zhang, D.-X., Zhu, T., and Yang, Z. 2011.
-\newblock Evaluation of a {B}ayesian coalescent method of species delimitation.
-\newblock {\em Syst. Biol.}, {60}: 747--761.
+\bibitem[Zhu and Yang(2012)Zhu and Yang]{Zhu2012}
+Zhu, T. and Yang, Z. 2012.
+\newblock Maximum likelihood implementation of an isolation-with-migration
+  model with three species for testing speciation with gene flow.
+\newblock {\em Mol. Biol. Evol.}, {29}: 3131--3142.
 
 \end{thebibliography}
