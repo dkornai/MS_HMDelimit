@@ -49,20 +49,22 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces (\textbf  {a}) Hierarchical merge and (\textbf  {b}) hierarchical split algorithms applied to the same guide tree for four populations.  \relax }}{4}{}\protected@file@percent }
 \newlabel{fig:gdi-algorithms}{{3}{4}}
 \@writefile{toc}{\contentsline {section}{The hierarchical merge and split algorithms}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces (\textbf  {a}) An isolation-by-distance model used to simulate multilocus sequence data, in which $A, B, C, D$ represent populations of a widely distributed species while $X$ is a new species that split off from population $A$. (\textbf  {b}) Incorrect species delimitation and phylogeny in Bayesian model selection using \textsc  {bpp} under the MSC model assuming no gene flow. Use of the guide tree and the $gdi$ criterion leads to delimitation of two species. Redrawn after \citet  [][fig.\nobreakspace  {}5]{Leache2019}. \relax }}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces  (\textbf  {a}) An isolation-by-distance model used to simulate multilocus sequence data (\textbf  {b}) Incorrect species delimitation and phylogeny in Bayesian model selection using \textsc  {bpp} under the MSC model assuming no gene flow. Redrawn after \citet  [][fig.\nobreakspace  {}5]{Leache2019}. \relax }}{4}{}\protected@file@percent }
 \newlabel{fig:ABCDX}{{4}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Series of visualizations produced the pipeline during the hierarchical merge iterations {\color  {blue}{[updated figure]}} \relax }}{4}{}\protected@file@percent }
+\newlabel{fig:ABCDX_out}{{5}{4}}
 \@writefile{toc}{\contentsline {section}{Example with simulated data ($ABCDX$)}{4}{}\protected@file@percent }
 \citation{Fiser2018}
 \citation{Petzold2020}
 \citation{Fennessy2016,Petzold2020}
 \citation{Jackson2017}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Screen output produced by the pipeline during the hierarchical merge iteration showing the currently accepted species delimitation and species phylogeny with parameter estimates ($\tau , \theta $). \relax }}{5}{}\protected@file@percent }
-\newlabel{fig:ABCDX_out}{{5}{5}}
+\citation{Petzold2020}
 \@writefile{toc}{\contentsline {section}{Empirical examples}{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{Species delimitation in the genus Giraffa}{5}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Geographical distributions of five species within Giraffa. Bright region on map shows historical (ca. 1700) giraffe ranges (modified from https://giraffeconservation.org/giraffe-species/). (\textbf  {a}) The guide tree for five populations of giraffes, with dotted lines indicating bidirectional migration events \citep  [][fig.\nobreakspace  {}1]{Petzold2020}. (\textbf  {b}) The merge algorithm supports five species, while (\textbf  {c}) the split algorithm supports three. {\color  {blue}{[Updated figure to use custom image. Updated colours to match between geographic distributions, and the phylogenetic trees.]}} \relax }}{5}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Geographical distributions of five species within Giraffa. Bright region on map shows historical (ca. 1700) giraffe ranges (modified from https://giraffeconservation.org/giraffe-species/). (\textbf  {a}) The guide tree for five populations of giraffes, with dotted lines indicating bidirectional migration events \citep  [][fig.\nobreakspace  {}1]{Petzold2020}. (\textbf  {b}) The merge algorithm supports five species, while (\textbf  {c}) the split algorithm supports three. {\color  {blue}{[Updated figure to use custom image, and match colours.]}} \relax }}{5}{}\protected@file@percent }
 \newlabel{fig:giraffe}{{6}{5}}
-\citation{Petzold2020}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Migration rates between the five giraffe species in the starting delimitation. {\color  {blue}{[new table with migration rates]}} \relax }}{5}{}\protected@file@percent }
+\newlabel{fig:giraffe_migration}{{7}{5}}
 \citation{Chambers2020}
 \citation{Chambers2020}
 \citation{Ruane2014}
@@ -71,13 +73,11 @@
 \citation{Chambers2020}
 \citation{Chambers2020}
 \citation{Chambers2020}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Migration rates between the five giraffe species in the starting delimitation. \relax }}{6}{}\protected@file@percent }
-\newlabel{fig:giraffe_migration}{{7}{6}}
+\citation{Chambers2020}
+\citation{Chambers2020}
 \@writefile{toc}{\contentsline {subsection}{Species delimitation in milksnakes (\textit  {Lampropeltis triangulum})}{6}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \textbf  {a)} The one-species and three-species delimitation hypotheses for milksnakes suggested by \citet  {Chambers2020}. \textbf  {b)} Starting delimitation, and inferred delimitations using the merge and split algorithms. {\color  {blue}{[Updated figure to use custom image. Updated colours to match between geographic distributions, and the phylogenetic trees.]}} \relax }}{6}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces  \textbf  {Top} Geographic distribution of seven milksnake subspecies. \textbf  {a)} The one-species and three-species delimitation hypotheses suggested by \citet  {Chambers2020}. \textbf  {b)} Starting delimitation, and inferred delimitations using the merge and split algorithms. \textbf  {Bottom} Alternative East-West splits. {\color  {blue}{[Updated figure to use custom image, and match colours]}} \relax }}{6}{}\protected@file@percent }
 \newlabel{fig:milksnake}{{8}{6}}
-\citation{Chambers2020}
-\citation{Chambers2020}
 \citation{Kim2022}
 \citation{Kim2022}
 \citation{Kim2022}
@@ -85,11 +85,13 @@
 \citation{Leache2019}
 \citation{Yang2010}
 \citation{Fujita2012}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces East-West splits for the milksnakes. Coloured dots represent the sampling location and original classification of individuals (blue: \textit  {triangulum}, green: \textit  {gentilis}). \relax }}{7}{}\protected@file@percent }
-\newlabel{fig:milksnake_EW}{{9}{7}}
 \@writefile{toc}{\contentsline {subsection}{Introgression and species delimitation in the longear sunfish (\emph  {Lepomis megalotis}).}{7}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces (\textbf  {a}) The guide tree (starting delimitation) for the Longear Sunfish (\textit  {Lepomis megalotis}), with three migration events (from \textit  {megalotis} to \textit  {pelastes}, \textit  {solis}, and \textit  {ozark}) assumed in the \textsc  {bpp} analysis, indicated by dotted lines. (\textbf  {b}) Both merge and split algorithms support a single species. {\color  {red}{[show merge result, as in figures for the other datasets. We need care to detail, and consistency among datasets.]}}{\color  {blue}{[merge and split results are identical, updated figure subtitles to reflect this]}}\relax }}{7}{}\protected@file@percent }
-\newlabel{fig:sunfish}{{10}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {Top} Geographic distribution of \textit  {L. Megalotis}. (\textbf  {a}) The guide tree (starting delimitation) for the Longear Sunfish (\textit  {Lepomis megalotis}), with three migration events (from \textit  {megalotis} to \textit  {pelastes}, \textit  {solis}, and \textit  {ozark}) assumed in the \textsc  {bpp} analysis, indicated by dotted lines. (\textbf  {b}) Both merge and split algorithms support a single species. {\color  {red}{[show merge result, as in figures for the other datasets. We need care to detail, and consistency among datasets.]}}{\color  {blue}{[merge and split results are identical, updated figure subtitles to reflect this, also updated the top figure]}}\relax }}{7}{}\protected@file@percent }
+\newlabel{fig:sunfish}{{9}{7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Migration rates between the putative sunfish species inferred during each iteration of the merge algorithm. {\color  {blue}{[new table with migration rates]}} \relax }}{7}{}\protected@file@percent }
+\newlabel{fig:sunfish_migration}{{10}{7}}
+\@writefile{toc}{\contentsline {section}{Discussion}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{Challenges of heuristic species delimitation}{7}{}\protected@file@percent }
 \citation{Jackson2017}
 \citation{Leache2019}
 \citation{Rannala2020}
@@ -102,12 +104,10 @@
 \citation{Leache2019}
 \citation{Yang2014,Rannala2017}
 \citation{Yang2010}
-\@writefile{toc}{\contentsline {section}{Discussion}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{Challenges of heuristic species delimitation}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{Gene flow and species status}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{The guide tree and paraphyletic species}{8}{}\protected@file@percent }
 \citation{Knowles2007}
 \citation{Sukumaran2021,Solis-Lemus2015}
+\@writefile{toc}{\contentsline {subsection}{Gene flow and species status}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{The guide tree and paraphyletic species}{8}{}\protected@file@percent }
 \bibstyle{natbib}
 \bibdata{bppGDI}
 \bibcite{Bamberger2022}{{1}{2022}{{Bamberger {\em  et~al.}}}{{Bamberger, Xu, and Hausdorf}}}
@@ -169,9 +169,9 @@
 \newlabel{fig:milksnake_EW_mcf}{{S7}{12}}
 \@writefile{lof}{\contentsline {figure}{\numberline {S8}{\ignorespaces Shell script used to iterate through alternative East-West delimitation hypotheses in Milksnakes, presented in figure 8\hbox {}. The \texttt  {-mcfpor} (control file parameter override) flag is used to override parameters of the mcf via the command line interface, setting the Imap file to one of the alternative East-West delimitations, and specifying the individual output directories for each analysis. \relax }}{13}{}\protected@file@percent }
 \newlabel{fig:milksnake_EW_shell}{{S8}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {S9}{\ignorespaces Control file for the merge analysis of the sunfish data. The results are presented in figure 10\hbox {}. \relax }}{13}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {S9}{\ignorespaces Control file for the merge analysis of the sunfish data. The results are presented in figure 9\hbox {}. \relax }}{13}{}\protected@file@percent }
 \newlabel{fig:sunfish_mcf_merge}{{S9}{13}}
-\@writefile{lof}{\contentsline {figure}{\numberline {S10}{\ignorespaces Control file for the split analysis of the sunfish data. The results are presented in figure 10\hbox {}. \relax }}{13}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {S10}{\ignorespaces Control file for the split analysis of the sunfish data. The results are presented in figure 9\hbox {}. \relax }}{13}{}\protected@file@percent }
 \newlabel{fig:sunfish_mcf_split}{{S10}{13}}
 \citation{Leache2019}
 \global\@namedef{@lastpage@}{14}

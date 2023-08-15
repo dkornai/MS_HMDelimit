@@ -192,6 +192,7 @@ empirical datasets, for giraffes, milksnakes, and sunfish.
    $gdi = \P(G_{1a})$.  Note that if there is no gene flow between $A$ and $B$, gene trees
    $G_{2b}$ and $G_{3b}$ are impossible.  %
    } \label{fig:gdi-trees}
+\vspace{-0.5cm}
 \end{figure}
 
 
@@ -212,6 +213,7 @@ empirical datasets, for giraffes, milksnakes, and sunfish.
    $b$ in $B$, resulting in the gene tree $G_2 = ((a_2,b),a_1)$ (this is $G_{2a}$ of
    fig.~\ref{fig:gdi-trees}). %
 } \label{fig:tree-mscm}
+\vspace{-0.5cm}
 \end{figure}
 
 When there is migration between the two populations, the probability for the gene tree
@@ -319,6 +321,7 @@ tree is $G_{1a}$, that is, $G_1$ with $t_1 < \tau_{AB}$
    algorithms applied to the same guide tree for four populations. \\%
 	} 
 	\label{fig:gdi-algorithms}
+\vspace{-0.5cm}
 \end{figure}
 
 We implement both the hierarchical merge and hierarchical split algorithms in a python
@@ -343,22 +346,22 @@ example, there is migration from $A$ to $B$ in the guide tree (the initial delim
 species/population, we retain the migration event (now from population $A$ to population
 $BC$).
 
-
 \section{Example with simulated data ($ABCDX$)}
 
 \begin{figure}[t]
    \centering
    \includegraphics[scale=0.7]{figs/fig-ABCDX}
    
-   \caption{(\textbf{a}) An isolation-by-distance model used to simulate multilocus
-   sequence data, in which $A, B, C, D$ represent populations of a widely distributed
-   species while $X$ is a new species that split off from population $A$.  (\textbf{b})
+   \caption{
+   	(\textbf{a}) An isolation-by-distance model used to simulate multilocus
+   sequence data 
+   (\textbf{b})
    Incorrect species delimitation and phylogeny in Bayesian model selection using
-   \textsc{bpp} under the MSC model assuming no gene flow.  Use of the guide tree and the
-   $gdi$ criterion leads to delimitation of two species.  Redrawn after
+   \textsc{bpp} under the MSC model assuming no gene flow. Redrawn after
    \citet[][fig.~5]{Leache2019}. %
 } \label{fig:ABCDX}
 \end{figure}
+
 
 \citet{Leache2019} simulated sequence data under the MSC-with-migration model for five
 populations of figure \ref{fig:ABCDX}, in which $A, B, C, D$ represent geographical
@@ -382,20 +385,19 @@ merge was rejected.  The final delimitation has two species, $ABCD$ and $X$.
 
 \begin{figure}[t]
 	\centering %
-	\includegraphics[scale=0.30]{figs/Pipedemo/sim_fig_v1} %
+	\includegraphics[scale=0.70]{figs/Pipedemo/progress} %
 	
-   \caption{Screen output produced by the pipeline during the hierarchical merge iteration
-   showing the currently accepted species delimitation and species phylogeny with
-   parameter estimates ($\tau, \theta$). %
+   \caption{Series of visualizations produced the pipeline during the hierarchical merge iterations %
+   	\blue{[updated figure]}
    } \label{fig:ABCDX_out}
 \end{figure}
 
 
+\FloatBarrier
 \section{Empirical examples}
-
 \subsection{Species delimitation in the genus Giraffa}
 
-\begin{figure}[t]
+\begin{figure}[h]
     \centering %
     \includegraphics[scale=0.50]{figs/Giraffe/giraffe_fig} %
     \includegraphics[scale=0.50]{figs/Giraffe/giraffe_result}  %
@@ -406,7 +408,7 @@ merge was rejected.  The final delimitation has two species, $ABCD$ and $X$.
     \citep[][fig.~1]{Petzold2020}.  %
     (\textbf{b}) The merge algorithm supports five species, while (\textbf{c}) the split
     algorithm supports three. %
-    \blue{[Updated figure to use custom image. Updated colours to match between geographic distributions, and the phylogenetic trees.]}
+    \blue{[Updated figure to use custom image, and match colours.]}
 } \label{fig:giraffe}
 \end{figure}
 
@@ -431,13 +433,13 @@ and \textit{giraffa}) species present in the starting delimitation as distinct s
 while the split algorithm recognized only a single Northern species combining the populations (fig.~\ref{fig:giraffe}c).} 
 
 \red{[Also it maybe interesting to look at the estimates of parameters ($\tau, \theta, M$).]}
-\blue{The migration rates interred during the delimitation process support the originally hypothesised patterns of hybridization and introgression between reticulated giraffes and their neighbouring populations (fig.~\ref{fig:giraffe_migration}). The highest levels of gene flow occurred within the Northern populations from \textit{cam.+rot.+ant.} to \textit{reticulata}, which notably affected four of the 21 introns in this dataset \citep{Petzold2020}]}
+\blue{The migration rates interred during the delimitation process support the originally hypothesised patterns of hybridization and introgression between reticulated giraffes and their neighbouring populations (fig.~\ref{fig:giraffe_migration}). The highest levels of gene flow occurred within the Northern populations from \textit{cam.+rot.+ant.} to \textit{reticulata}, which notably affected four of the 21 introns in this dataset \citep{Petzold2020}.}
 
 \begin{figure}[h]
 	\begin{center}
 		\begin{tabular}{|c  c  c |} 
 			\hline
-			Source & Destination & M \\ 
+			\textbf{Source} & \textbf{Destination} & \textbf{M} \\ 
 			\hline
 			tip.+tho. & reticulata & 0.0024 \\ 
 			reticulata & tip.+tho. & 0.0016 \\
@@ -447,22 +449,29 @@ while the split algorithm recognized only a single Northern species combining th
 		\end{tabular}
 	\end{center}
 	\caption{Migration rates between the five giraffe species in the starting delimitation. %
+		\blue{[new table with migration rates]}
 	} \label{fig:giraffe_migration}
 \end{figure}
 
 
+\newpage
+
 \subsection{Species delimitation in milksnakes (\textit{Lampropeltis triangulum})}
 
-\begin{figure}[t]
+\begin{figure}[h!]
     \centering %
-    \includegraphics[scale=0.6]{figs/Lampro/figure} %
+    \includegraphics[scale=0.55]{figs/Lampro/figure} %
     \includegraphics[scale=0.5]{figs/fig-miksnakes-results} %
+    \includegraphics[scale=0.30]{figs/Lampro/EW} %
     
-    \caption{\textbf{a)} The one-species and three-species delimitation hypotheses for
-    milksnakes suggested by \citet{Chambers2020}.
+    \caption{
+    \textbf{Top} Geographic distribution of seven milksnake subspecies. 
+    \textbf{a)} The one-species and three-species delimitation hypotheses suggested by \citet{Chambers2020}.
     \textbf{b)} Starting delimitation, and inferred delimitations using the merge and
-    split algorithms. \blue{[Updated figure to use custom image. Updated colours to match between geographic distributions, and the phylogenetic trees.]} %
-} \label{fig:milksnake}
+    split algorithms. 
+    \textbf{Bottom} Alternative East-West splits.
+    \blue{[Updated figure to use custom image, and match colours]} %
+	} \label{fig:milksnake}
 \end{figure} 
 
 The American milksnake \textit{Lampropeltis triangulum} is a New World snake with one of
@@ -479,7 +488,7 @@ delimitation hypotheses, with one and three species, respectively
 arbitrary delimitation hypotheses, each with two species representing arbitrary east-west
 splits of the \textit{gentilis} and \textit{triangulum} populations.  All the five
 delimitation hypotheses were supported by Bayesian model selection using \textsc{bpp}
-(fig.~\ref{fig:milksnake_EW}), even though they are not mutually compatible.
+(fig.~\ref{fig:milksnake}), even though they are not mutually compatible.
 
 We reanalyzed the data using our pipeline, using a guide tree for five populations of
 \citet{Chambers2020}, with no migration rates assumed (fig.~\ref{fig:milksnake}).  Merge
@@ -490,18 +499,9 @@ hypothesis of \citet{Chambers2020}, two of the species (\textit{elapsoides} and
 \textit{triangulum}) were identical, but the \textit{polyzona} lineage is split into
 distinct species.  The split analysis supported only a single species.
 
-\begin{figure}[t]
-	\centering %
-	\includegraphics[scale=0.5]{figs/miksnakes_EW} %
-	
-	\caption{East-West splits for the milksnakes.  Coloured dots represent the sampling
-	location and original classification of individuals (blue: \textit{triangulum}, green:
-	\textit{gentilis}). %
-	} \label{fig:milksnake_EW}
-\end{figure} 
 
 We conducted a second analysis using only the 38 individuals from the \textit{gentilis},
-\textit{triangulum}, and \textit{alterna} populations (which acted as an outgroup in all
+\textit{triangulum}, and \textit{annulata} populations (which acted as an outgroup in all
 analyses).  The assignment of individuals to the \textit{gentilis} and \textit{triangulum}
 populations was varied in each analysis, according to the five arbitrary East-West splits
 of \cite{Chambers2020} (fig.~\ref{fig:milksnake}).  Merge and split analyses were ran
@@ -514,22 +514,23 @@ single species.  These results are consistent with the suggestions of \cite{Cham
 
 \red{[Comment on the $\sim$0 estimates of migration rates between geographic populations.]}\blue{[As patterns of hybridization or migration for nuclear genes were not specified in the Chambers and Hillis paper, and only nuclear genes were used in the analysis, the model was run without migration (just MSC), thus no migration rates were estimated (See control files in S5 an S6)]}
 
+\newpage
 
 \subsection{Introgression and species delimitation in the longear sunfish (\emph{Lepomis
 megalotis}).}
 
-\begin{figure}[t]
+\begin{figure}[h!]
     \centering %
-    \includegraphics[scale=0.15]{figs/Sunfish/Lepomis_megalotis} %
-    \includegraphics[scale=0.45]{figs/Sunfish/sunfish_results} %
+    \includegraphics[scale=0.28]{figs/Sunfish/figure} %
+    \includegraphics[scale=0.48]{figs/Sunfish/sunfish_results} %
     
-    \caption{(\textbf{a}) The guide tree (starting delimitation) for the Longear Sunfish
+    \caption{\textbf{Top} Geographic distribution of \textit{L. Megalotis}. (\textbf{a}) The guide tree (starting delimitation) for the Longear Sunfish
     (\textit{Lepomis megalotis}), with three migration events (from \textit{megalotis} to
     \textit{pelastes}, \textit{solis}, and \textit{ozark}) assumed in the \textsc{bpp}
     analysis, indicated by dotted lines.  %
     (\textbf{b}) Both merge and split algorithms support a single species.  \red{[show
     merge result, as in figures for the other datasets.  We need care to detail, and
-    consistency among datasets.]}\blue{[merge and split results are identical, updated figure subtitles to reflect this]}%
+    consistency among datasets.]}\blue{[merge and split results are identical, updated figure subtitles to reflect this, also updated the top figure]}%
     } \label{fig:sunfish}
 \end{figure}
 
@@ -559,11 +560,33 @@ generation.  Merge and split algorithms were run using $gdi$ thresholds of 0.3 a
 
 Both merge and split analyses supported a single species.  This is congruent with the
 delimitation of \citet{Kim2022}, who calculated $gdi$ under the MSC model without
-gene flow.  \red{[look at parameter estimates.]}
+gene flow. \red{[look at parameter estimates.]} \blue{Throughout the merge run, which started from 6 species, the migration rates between populations were consistently large, indicating high rates of gene flow between the populations, and further supporting the classification of populations as a single species.}
 
+\begin{figure}[h]
+	\begin{center}
+		\begin{tabular}{| c | c  c  c |} 
+			\hline
+			\textbf{Iter.} & \textbf{Source} & \textbf{Destination} & \textbf{M} \\ 
+			\hline
+			1 & megalotis & solis & 0.6048 \\ 
+			  & megalotis & pelastes & 0.5366 \\
+			  & megalotis & ozark & 0.3224 \\
+			\hline
+			2 & megalotis & solis & 0.6918 \\
+			  & megalotis & pel.+ozk. & 0.6927 \\
+			\hline
+			3 & pel.+ozk.+meg. & solis & 0.5789 \\
+			\hline
+			4 & pel.+ozk.+meg.+oua. & solis & 0.4073 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Migration rates between the putative sunfish species inferred during each iteration of the merge algorithm.  %
+		\blue{[new table with migration rates]}
+	} \label{fig:sunfish_migration}
+\end{figure}
 
-%\newpage
-
+\FloatBarrier
 \section{Discussion}
 
 \subsection{Challenges of heuristic species delimitation}
